@@ -1,6 +1,10 @@
+pkg install nodejs -y
+npm install -g bash-obfuscate
 mkdir .temp
 clear
-printf " \e[96m\e[1m[\e[97m\e[1m+\e[96m\e[1m] \e[32mInput your File Location : \e[33m "
+echo
+echo
+printf " \e[96m\e[1m[\e[97m\e[1m+\e[96m\e[1m] \e[32mInput your File Name : \e[33m "
 read scloc
 echo
 echo
