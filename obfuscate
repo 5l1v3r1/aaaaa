@@ -11,24 +11,26 @@ sleep 2
 
 touch $Nombre
 echo "#!/usr/bin/env bash" >> $Nombre
-echo "#" >> $Nombre
-echo "# Obfuscate by @CesarHackGray" >> $Nombre
-echo "# Contacta https://t.me/CesarGray" >> $Nombre
-echo "#" >> $Nombre
-printf "PIXIE=" >> $Nombre
+echo " " >> $Nombre
+echo "# Obfuscate by HTR-TECH (Tahmid Rayat)" >> $Nombre
+echo "# Github : https://github.com/htr-tech" >> $Nombre
+echo " " >> $Nombre
+echo "# Sorry Bro ! But You Can not Decrypt It :P" >> $Nombre
+echo " " >> $Nombre
+printf "HTRTECH=" >> $Nombre
 printf "$" >> $Nombre
 printf "(mktemp)\n" >> $Nombre
 printf "base64 -d  >$" >> $Nombre
 printf "{" >> $Nombre
-printf "PIXIE}<<DIXIE\n" >> $Nombre
+printf "HTRTECH}<<DIXIE\n" >> $Nombre
 echo "$(base64 $file)" >> $Nombre
 echo "DIXIE" >> $Nombre
 printf "source $" >> $Nombre
 printf "{" >> $Nombre
-printf "PIXIE}\n" >> $Nombre
+printf "HTRTECH}\n" >> $Nombre
 printf "rm -rf $" >> $Nombre
 printf "{" >> $Nombre
-printf "PIXIE}" >> $Nombre
+printf "HTRTECH}" >> $Nombre
 
 
 
@@ -38,7 +40,7 @@ function verifucar {
 	if [ ! -e $file ]; then
 		sleep 1
 echo
-echo "      Error el scritp eleccionado no existe"
+echo "      File Doesn not Exist"
 echo
 sleep 3
 help
@@ -46,13 +48,13 @@ help
 }
 function help {
 sleep 1
-echo "Usage: bash-obfuscate <ejemplo.sh> [opcion]"
+echo "Usage: obfuscate -i <file.sh> -o <new.sh>"
 echo
 echo "Opcion:      Created by @CesarHackGray"  
-echo "  -o, --Nombre                     Nuevo nombre del scritp"
-echo "  -i, --Ruta             Ruta del scritp que quiere ofuscar"
+echo "  -o, --Nombre                     New Name"
+echo "  -i, --Ruta             File to be obfuscated"
 echo "           "
-echo "   bash-obfuscate -i RutaDelScritp.sh -o (nuevo nombre.sh) "
+echo "   obfuscate -i RutaDelScritp.sh -o (nuevo nombre.sh) "
 echo
 echo "Visita mi canal en youtube con el comando"
 echo "           bash-obfuscate --visitar --channel"
