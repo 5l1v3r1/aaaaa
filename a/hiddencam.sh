@@ -44,12 +44,32 @@ printf " \n"
 
 }
 menu() {
+if [[ -e linksender ]]; then
+rm -rf linksender
+fi
 
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m01\e[0m\e[1;91m]\e[0m\e[1;93m Ngrok\e[0m\n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m02\e[0m\e[1;91m]\e[0m\e[1;93m Serveo\e[0m\n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m03\e[0m\e[1;91m]\e[0m\e[1;93m LocalHost.Run\e[0m\n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m04\e[0m\e[1;91m]\e[0m\e[1;93m PageKite\e[0m\n"
+printf "\e[0m\n"
+read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select a Port Forwarding option: \e[0m\e[1;96m\en' option_server
+option_server="${option_server:-${d_o_server}}"
+if [[ $option_server == 1 || $option_server == 01 ]]; then
+start_ngrok
+elif [[ $option_server == 2 || $option_server == 02 ]]; then
+start_serveo
+elif [[ $option_server == 3 || $option_server == 03 ]]; then
+start_local
+elif [[ $option_server == 4 || $option_server == 04 ]]; then
+start_page
 
+else
+printf "\n \e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\e[1;93m Invalid option \e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\n"
+sleep 1
+banner
+menu
+fi
 }
 
 banner
