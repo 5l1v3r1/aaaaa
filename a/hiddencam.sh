@@ -89,7 +89,7 @@ printf "\n"
 while [ true ]; do
 
 if [[ -e "ip.txt" ]]; then
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP Found!\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP Found !!\n"
 saveip
 rm -rf ip.txt
 
