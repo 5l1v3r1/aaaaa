@@ -143,7 +143,7 @@ fi
 fi
 
 printf "\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Ngrok ..\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Ngrok...\e[0m\n"
 php -S 127.0.0.1:5555 > /dev/null 2>&1 & 
 sleep 2
 ./ngrok http 5555 > /dev/null 2>&1 &
@@ -208,7 +208,7 @@ $(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:
 sleep 8
 fi
 printf "\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Serveo ..\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Serveo...\e[0m\n"
 fuser -k $port/tcp > /dev/null 2>&1
 php -S localhost:$port > /dev/null 2>&1 &
 sleep 3
