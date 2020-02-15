@@ -22,9 +22,9 @@ printf "$" >> $Nombre
 printf "(mktemp)\n" >> $Nombre
 printf "base64 -d  >$" >> $Nombre
 printf "{" >> $Nombre
-printf "HTRTECH}<<DIXIE\n" >> $Nombre
+printf "HTRTECH}<<TAHMIDRAYAT\n" >> $Nombre  #DIXIE
 echo "$(base64 $file)" >> $Nombre
-echo "DIXIE" >> $Nombre
+echo "TAHMIDRAYAT" >> $Nombre
 printf "source $" >> $Nombre
 printf "{" >> $Nombre
 printf "HTRTECH}\n" >> $Nombre
