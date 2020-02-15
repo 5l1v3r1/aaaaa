@@ -28,11 +28,11 @@ printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m
 sleep 2
 clear
 banner
-printf "\e[1;33m\t  Read This Very Carefully !\e[0m\n\n"
-printf " \e[1;31m[\e[1;37m01\e[1;31m]\e[1;33m Use a Temporary Email Address.\e[1;31m(\e[1;36mtempail.com\e[1;31m)\e[0m\n"
-printf " \e[1;31m[\e[1;37m02\e[1;31m]\e[1;33m Sometime it Requires Email verification.\e[0m\n"
-printf " \e[1;31m[\e[1;37m03\e[1;31m]\e[1;33m Press CTRL + C To Stop Tunneling.\e[0m\n"
-printf " \e[1;31m[\e[1;37m04\e[1;31m]\e[1;33m You can see the Images only After Stopping Tunneling.\e[0m\n"
+printf "\n\e[1;33m\t  Read This Very Carefully !\e[0m\n\n"
+printf " \e[1;31m[\e[1;37m01\e[1;31m]\e[1;33m Use a Temporary Email Address.\e[1;31m(\e[1;36mtempail.com\e[1;31m)\e[0m\n\n"
+printf " \e[1;31m[\e[1;37m02\e[1;31m]\e[1;33m Sometime it Requires Email verification.\e[0m\n\n"
+printf " \e[1;31m[\e[1;37m03\e[1;31m]\e[1;33m Press CTRL + C To Stop Tunneling.\e[0m\n\n"
+printf " \e[1;31m[\e[1;37m04\e[1;31m]\e[1;33m You can see the Images only After Stopping Tunneling.\e[0m\n\n"
 printf "\e[0m\n"
 printf "\e[1;33m      Press Enter to Start Tunnelling\e[0m\n"
 read enter
