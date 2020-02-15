@@ -1,4 +1,3 @@
-start_pagekite() {
 
 if [[ -e .pagekite.sh ]]; then
 echo ""
