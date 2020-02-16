@@ -31,6 +31,7 @@ else
 curl -o .pagekite https://pagekite.net/pk/pagekite.py > /dev/null 2>&1
 fi
 
+banner
 printf " \n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m01\e[0m\e[1;91m]\e[0m\e[1;93m Initializing...\e[0m\n"
 printf " \n"
