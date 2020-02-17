@@ -104,6 +104,8 @@ printf "<?php\ninclude '.camdata.php';\nheader('Location: NetFlix-Premium-Accoun
 
 printf " \n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;92m Installation Completed ...\e[0m\n"
+printf " \n"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;96m Type \e[1;93mbash hiddencam.sh \e[1;96mto run this tool\e[0m\n"
 sleep 2
 printf "\e[0m\n"
 printf "\e[0m\n"
