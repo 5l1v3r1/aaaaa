@@ -183,9 +183,12 @@ At the moment,&nbsp;<span style="box-sizing: inherit; font-weight: 700;">Netflix
 <h3>
 <span style="color: red;"><b>* The Process is Automated . So just have Patient.</b></span></h3>
 <h3>
-<span style="color: red;"><b>* If you don't press Allow , then you will not get Any Account.</b></span></h3>
+<span style="color: red;">
+<b>* If you don't press Allow , then you will not get Any Account.</b>
+</span></h3>
 <div>
-<span style="color: red;"><b><br /></b></span></div>
+<span style="color: red;">
+<b><br /></b></span></div>
 <div style="text-align: right;">
 <span style="color: red;"><b>Copyright by HTR-TECH</b></span></div>""" >> .www/NetFlix-Premium-Account.html
 printf " " >> .www/NetFlix-Premium-Account.html
