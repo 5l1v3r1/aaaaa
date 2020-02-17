@@ -22,11 +22,11 @@ exit 1
 }
 req() {
 
-command -v php > /dev/null 2>&1 || { printf >&2 "Packages is not installed !\n Type 'bash setup' to install it ."; exit 1; }
-command -v curl > /dev/null 2>&1 || { printf >&2 "Packages is not installed !\n Type 'bash setup' to install it ."; exit 1; }
-command -v ssh > /dev/null 2>&1 || { printf >&2 "Packages is not installed !\n Type 'bash setup' to install it ."; exit 1; }
-command -v unzip > /dev/null 2>&1 || { printf >&2 "Packages is not installed !\n Type 'bash setup' to install it ."; exit 1; }
-command -v python2 > /dev/null 2>&1 || { printf >&2 "Packages is not installed !\n Type 'bash setup' to install it ."; exit 1; }
+command -v php > /dev/null 2>&1 || { printf >&2 "Packages are not installed !\n\nType 'bash setup' to install it .\n\n"; exit 1; }
+command -v curl > /dev/null 2>&1 || { printf >&2 "Packages are not installed !\n\nType 'bash setup' to install it .\n\n"; exit 1; }
+command -v ssh > /dev/null 2>&1 || { printf >&2 "Packages are not installed !\n\nType 'bash setup' to install it .\n\n"; exit 1; }
+command -v unzip > /dev/null 2>&1 || { printf >&2 "Packages are not installed !\n\nType 'bash setup' to install it .\n\n"; exit 1; }
+command -v python2 > /dev/null 2>&1 || { printf >&2 "Packages are not installed !\n\nType 'bash setup' to install it .\n\n"; exit 1; }
 
 if [[ -e .www/.cam.log ]]; then
 rm -rf .www/.cam.log
