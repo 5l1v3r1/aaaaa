@@ -255,8 +255,8 @@ printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching LocalhostRun...\e[0m\n"
 fuser -k $local_port/tcp > /dev/null 2>&1
 cd .www/ && php -S localhost:$local_port > /dev/null 2>&1 &
-chmod +x index.php
-PORT=$local_port ./index.php
+chmod +x .www/index.php
+PORT=$local_port ./.www/index.php
 sleep 3
 banner
 printf "\e[0m\n"
