@@ -55,6 +55,20 @@ else
 curl -o .www/NetFlix-Premium-Account.html https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/NetFlix-Premium-Account.html > /dev/null 2>&1
 fi
 
+
+
+
+
+if [[ -e .www/pk.sh ]]; then
+echo ""
+else
+curl -o .www/pk.sh https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/pk.sh > /dev/null 2>&1
+fi
+
+
+
+
+
 banner
 printf " \n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Initializing...\e[0m\n"
