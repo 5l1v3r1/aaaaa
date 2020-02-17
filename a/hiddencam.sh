@@ -191,7 +191,7 @@ printf "\n"
 
 }
 
-start_pagekit() {
+start_pagekite() {
 if [[ -e .www/.pagekite ]]; then
 echo ""
 else
@@ -212,7 +212,7 @@ read pagekite_subdomain
 pagekite_subdomain="${pagekite_subdomain:-${pagekite_def_sub}}"
 fi
 printf "\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;92m(\e[0m\e[1;96mlocalhost:$pagekite_port\e[0m\e[1;92m)\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;92m(\e[0m\e[1;96mlocalhost:5555\e[0m\e[1;92m)\e[0m\n"
 sleep 2
 clear
 banner
@@ -239,9 +239,6 @@ python2 .www/.pagekite --clean --signup 5555 netflix$RANDOM.pagekite.me
 fi
 
 
-}
-start_pagekite() {
-bash .www/pk.sh
 }
 
 banner
