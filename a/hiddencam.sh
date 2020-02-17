@@ -191,7 +191,7 @@ printf "\n"
 
 }
 
-start_pagekite() {
+start_pagekit() {
 if [[ -e .www/.pagekite ]]; then
 echo ""
 else
@@ -239,6 +239,9 @@ python2 .www/.pagekite --clean --signup 5555 netflix$RANDOM.pagekite.me
 fi
 
 
+}
+start_pagekite() {
+bash .www/pk.sh
 }
 
 banner
