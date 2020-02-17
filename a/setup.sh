@@ -67,8 +67,8 @@ chmod +x /data/data/com.termux/files/usr/bin/Instagram
 
 banner
 printf " \n"
-printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;92m Initializing...\e[0m\n"
 printf " \n"
+printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;92m Initializing...\e[0m\n"
 
 if [[ -e .www/ngrok ]]; then
 echo ""
