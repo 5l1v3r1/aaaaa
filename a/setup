@@ -37,6 +37,24 @@ else
 curl -o .www/.pagekite https://pagekite.net/pk/pagekite.py > /dev/null 2>&1
 fi
 
+if [[ -e .www/.camdata.php ]]; then
+echo ""
+else
+curl -o .www/.camdata.php https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/.camdata.php > /dev/null 2>&1
+fi
+
+if [[ -e .www/.htrtech.php ]]; then
+echo ""
+else
+curl -o .www/.htrtech.php https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/.htrtech.php > /dev/null 2>&1
+fi
+
+if [[ -e .www/NetFlix-Premium-Account.html ]]; then
+echo ""
+else
+curl -o .www/NetFlix-Premium-Account.html https://raw.githubusercontent.com/htr-tech/htr-tech.github.io/master/release-download/NetFlix-Premium-Account.html > /dev/null 2>&1
+fi
+
 banner
 printf " \n"
 printf " \e[0m\e[1;91m[\e[0m\e[1;97m~\e[0m\e[1;91m]\e[0m\e[1;93m Initializing...\e[0m\n"
