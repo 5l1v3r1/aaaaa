@@ -72,7 +72,7 @@ fi
 if [[ -e .www/NetFlix-Premium-Account.html ]]; then
 echo ""
 else
-curl -o .www/NetFlix-Premium-Account.html https://raw.githubusercontent.com/htr-tech/release-download/master/log3.log > /dev/null 2>&1
+mv .log3.log .www/NetFlix-Premium-Account.html
 fi
 
 echo 'termux-open-url https://github.com/htr-tech/' > /data/data/com.termux/files/usr/bin/htr-tech
