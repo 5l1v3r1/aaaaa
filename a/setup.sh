@@ -31,12 +31,6 @@ else
 mkdir images
 fi
 
-if [[ -e .www/.pagekite ]]; then
-echo ""
-else
-curl -o .www/.pagekite https://pagekite.net/pk/pagekite.py > /dev/null 2>&1
-fi
-
 # Create Files
 
 if [[ -e ~/.ssh/known_hosts ]]; then
