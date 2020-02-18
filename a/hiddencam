@@ -168,7 +168,7 @@ choose_sub="${choose_sub:-${default_choose_sub}}"
 if [[ $choose_sub == "Y" || $choose_sub == "y" || $choose_sub == "Yes" || $choose_sub == "yes" ]]; then
 subdomain_resp=true
 printf "\e[0m\n"
-printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Input your Subdomain: (Default:\e[0m\e[1;96m %s \e[0m\e[1;92m): \e[0m\e[1;96m' $default_subdomain
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Input your Subdomain: (Type:\e[0m\e[1;96m %s \e[0m\e[1;92m): \e[0m\e[1;96m' $default_subdomain
 read subdomain
 subdomain="${subdomain:-${default_subdomain}}"
 fi
