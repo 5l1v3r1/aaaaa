@@ -290,6 +290,7 @@ printf "\e[0m\n"
 
 fi
 
+done
 }
 
 banner
