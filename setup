@@ -1,0 +1,90 @@
+# Zphisher V_3.0
+# ==============================================
+# Created By HTR-TECH @tahmid.rayat
+# Instagram : https://instagram.com/tahmid.rayat
+# Github : https://github.com/htr-tech/
+# ==============================================
+#!/bin/bash
+
+banner() {
+
+clear
+printf " \e[33;1m ______      _     _     _               \e[0m\n"
+printf " \e[33;1m|___  /     | |   (_)   | |              \e[0m\n"
+printf " \e[33;1m   / / _ __ | |__  _ ___| |__   ___ _ __ \e[0m\n"
+printf " \e[32;1m  / /\e[33;1m | '_ \| '_ \| / __| '_ \ / _ \ '__|\e[0m\n"
+printf " \e[32;1m / /__| |_) | | | | \__ \ | | |  __/ |   \e[0m\n"
+printf " \e[32;1m/_____| .__/|_| |_|_|___/_| |_|\___|_|   \e[0m\n"
+printf " \e[33;1m      | |                                \e[0m\n"
+printf " \e[33;1m      |_|           \e[1;97m    Version 3.0      \e[0m\n"
+printf " \n"
+printf " \e[92m[\e[37;1m+\e[92m]\e[0m\e[33;1m Tool Created by htr-tech (tahmid.rayat)\e[0m\n"
+printf " \n"
+
+}
+
+if [ -d /data/data/com.termux/files/usr/etc ]; then
+  apt update && apt install git php curl openssh -y
+  cp websites/zphisher /data/data/com.termux/files/usr/bin
+  chmod +x /data/data/com.termux/files/usr/bin/zphisher
+  
+  if [[ -e ~/.ssh/known_hosts ]]; then
+  echo ""
+  else
+  printf "ssh.localhost.run,35.193.161.204 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA+Vx7AHL5S/ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W/wFaT/ETH1tn55T2FVsK/zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s/LmxgoJ3PocVUn5rVXz/Dng7Y8jYNe4IFrZOAUsi7hNBa+OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f+FNl0kfaWru4Cblr843wBe2ckO/sNqgeAMXO/qH+SSgQxUXF2AgAw+TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH\n" > ~/.ssh/known_hosts
+
+  banner
+  printf "\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\e[1;93m    Zphisher SuccessFully Installed !\e[0m\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\e[1;93m    Restart Termux App\e[0m\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\e[1;93m    Type zphisher to Run it\e[0m\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\n"
+  printf "\n"
+elif [ -d /usr/etc ]; then
+  apt update && apt install git php curl openssh -y
+  cp websites/zphisher /usr/bin
+  chmod +x /usr/bin/zphisher
+    
+  if [[ -e ~/.ssh/known_hosts ]]; then
+  echo ""
+  else
+  printf "ssh.localhost.run,35.193.161.204 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA+Vx7AHL5S/ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W/wFaT/ETH1tn55T2FVsK/zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s/LmxgoJ3PocVUn5rVXz/Dng7Y8jYNe4IFrZOAUsi7hNBa+OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f+FNl0kfaWru4Cblr843wBe2ckO/sNqgeAMXO/qH+SSgQxUXF2AgAw+TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH\n" > ~/.ssh/known_hosts
+
+  banner
+  printf "\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\e[1;93m    Zphisher SuccessFully Installed !\e[0m\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\e[1;93m    Restart Termux App\e[0m\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\e[1;93m    Type zphisher to Run it\e[0m\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\n"
+  printf "\n"
+elif [ -d /etc ]; then
+  apt update && apt install git php curl openssh -y
+  cp websites/zphisher /bin
+  chmod +x /bin/zphisher
+    
+  if [[ -e ~/.ssh/known_hosts ]]; then
+  echo ""
+  else
+  printf "ssh.localhost.run,35.193.161.204 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA+Vx7AHL5S/ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W/wFaT/ETH1tn55T2FVsK/zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s/LmxgoJ3PocVUn5rVXz/Dng7Y8jYNe4IFrZOAUsi7hNBa+OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f+FNl0kfaWru4Cblr843wBe2ckO/sNqgeAMXO/qH+SSgQxUXF2AgAw+TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH\n" > ~/.ssh/known_hosts
+
+  banner
+  printf "\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\e[1;93m    Zphisher SuccessFully Installed !\e[0m\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\e[1;93m    Restart Termux App\e[0m\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\e[1;93m    Type zphisher to Run it\e[0m\n"
+  printf "\e[1;96m--------------------------------------------\e[0m\n"
+  printf "\n"
+  printf "\n"
+fi
+exit
