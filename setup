@@ -11,13 +11,7 @@ if [ -d /data/data/com.termux/files/usr/etc ]; then
   apt update && apt install git php curl openssh -y
   cp websites/zphisher /data/data/com.termux/files/usr/bin
   chmod +x /data/data/com.termux/files/usr/bin/zphisher
-  
-  if [[ -e ~/.ssh/known_hosts ]]; then
-  echo ""
-  else
   printf "ssh.localhost.run,35.193.161.204 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA+Vx7AHL5S/ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W/wFaT/ETH1tn55T2FVsK/zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s/LmxgoJ3PocVUn5rVXz/Dng7Y8jYNe4IFrZOAUsi7hNBa+OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f+FNl0kfaWru4Cblr843wBe2ckO/sNqgeAMXO/qH+SSgQxUXF2AgAw+TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH\n" > ~/.ssh/known_hosts
-  fi
-  
   printf "\n"
   printf "\n"
   printf "\e[1;96m--------------------------------------------\e[0m\n"
@@ -34,13 +28,7 @@ elif [ -d /usr/etc ]; then
   apt update && apt install git php curl openssh -y
   cp websites/zphisher /usr/bin
   chmod +x /usr/bin/zphisher
-  
-  if [[ -e ~/.ssh/known_hosts ]]; then
-  echo ""
-  else
   printf "ssh.localhost.run,35.193.161.204 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA+Vx7AHL5S/ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W/wFaT/ETH1tn55T2FVsK/zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s/LmxgoJ3PocVUn5rVXz/Dng7Y8jYNe4IFrZOAUsi7hNBa+OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f+FNl0kfaWru4Cblr843wBe2ckO/sNqgeAMXO/qH+SSgQxUXF2AgAw+TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH\n" > ~/.ssh/known_hosts
-  fi
-  
   printf "\n"
   printf "\n"
   printf "\e[1;96m--------------------------------------------\e[0m\n"
@@ -57,13 +45,7 @@ elif [ -d /etc ]; then
   apt update && apt install git php curl openssh -y
   cp websites/zphisher /bin
   chmod +x /bin/zphisher
-  
-  if [[ -e ~/.ssh/known_hosts ]]; then
-  echo ""
-  else
   printf "ssh.localhost.run,35.193.161.204 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3lJnhW1oCXuAYV9IBdcJA+Vx7AHL5S/ZQvV2fhceOAPgO2kNQZla6xvUwoE4iw8lYu3zoE1KtieCU9yInWOVI6W/wFaT/ETH1tn55T2FVsK/zaxPiHZVJGLPPdEEid0vS2p1JDfc9onZ0pNSHLl1QusIOeMUyZ2bUMMLLgw46KOT9S3s/LmxgoJ3PocVUn5rVXz/Dng7Y8jYNe4IFrZOAUsi7hNBa+OYja6ceefpDvNDEJ1BdhbYfGolBdNA7f+FNl0kfaWru4Cblr843wBe2ckO/sNqgeAMXO/qH+SSgQxUXF2AgAw+TGp3yCIyYoOPvOgvcPsQziJLmDbUuQpnH\n" > ~/.ssh/known_hosts
-  fi
-  
   printf "\n"
   printf "\n"
   printf "\e[1;96m--------------------------------------------\e[0m\n"
