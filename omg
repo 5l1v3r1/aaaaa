@@ -51,8 +51,8 @@ termux-setup-storage
 
 sed -i '/^ZSH_THEME/d' "$HOME/.zshrc"
 sed -i '1iZSH_THEME="agnoster"' "$HOME/.zshrc"
-mv .files/colors.properties $HOME/.termux/colors.properties
-mv .files/font.ttf $HOME/.termux/font.ttf
+mv .file/colors.properties $HOME/.termux/colors.properties
+mv .file/font.ttf $HOME/.termux/font.ttf
 echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
 
 termux-setup-storage
