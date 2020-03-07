@@ -42,7 +42,6 @@ mkdir .file
 fi
 
 wget -cO - https://github.com/htr-tech/release-download/raw/master/oh-my-zsh/font.ttf > .file/font.ttf
-wget -cO - https://raw.githubusercontent.com/htr-tech/release-download/master/oh-my-zsh/colors.properties > .file/colors.properties
 
 cp -f $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
 chsh -s zsh
@@ -51,13 +50,12 @@ termux-setup-storage
 
 sed -i '/^ZSH_THEME/d' "$HOME/.zshrc"
 sed -i '1iZSH_THEME="agnoster"' "$HOME/.zshrc"
-mv .file/colors.properties $HOME/.termux/colors.properties
 mv .file/font.ttf $HOME/.termux/font.ttf
 echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
 
 termux-setup-storage
 
-printf "  Welcome to Termux !\n\n* Termux : https://termux.com\n* Wiki : https://wiki.termux.com\n* Forum : https://termux.com/community\n\n\* Instagram : @tahmid.rayat\n* Github : https://github.com/htr-tech\n\n" > ~/../usr/etc/motd	
+printf "\n  Welcome to Termux !\n\n* Termux : https://termux.com\n* Wiki : https://wiki.termux.com\n* Forum : https://termux.com/community\n\n* Instagram : @tahmid.rayat\n* Github : https://github.com/htr-tech\n\n" > ~/../usr/etc/motd	
 termux-reload-settings
 
 printf "\e[0m\n"
