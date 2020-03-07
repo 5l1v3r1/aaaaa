@@ -85,4 +85,4 @@ printf " \e[1;91m[\e[1;97m~\e[1;91m]\e[1;96m  "
 slowprint " RESTARTING !!"
 printf "\e[0m\n"
 sleep 1
-exit
+killall -9 com.termux
