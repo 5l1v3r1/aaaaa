@@ -43,7 +43,7 @@ rm -rf $HOME/.termux
 fi
 
 if [ ! -d $HOME/.termux ]; then
-cp -f .termux $HOME/.termux
+cp -f .termux $HOME
 fi
 
 cp -f $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
