@@ -37,11 +37,9 @@ if [ ! -d $HOME/.termux ]; then
 mkdir $HOME/.termux
 fi
 
-if [ -d ".file" ]; then
-echo ""
-fi
-else
+if [ ! -d ".file" ]; then
 mkdir .file
+fi
 
 wget -cO - https://github.com/htr-tech/release-download/raw/master/oh-my-zsh/font.ttf > .file/font.ttf
 wget -cO - https://raw.githubusercontent.com/htr-tech/release-download/master/oh-my-zsh/colors.properties > .file/colors.properties
