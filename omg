@@ -1,34 +1,5 @@
 #!/bin/bash
 
-slowprint ()
-{
-        local i stepping
-        stepping="0.01"
-
-        if [ ! "$1" ]; then 
-                echo
-                return
-        fi
-
-        if  (( $# > 1 )) && 
-            [[ ($2 = $(echo $2 | grep -oE '[[:digit:]]')) ||
-               ($2 = $(echo $2 | grep -oE '[[:digit:]]+\.[[:digit:]]+')) ]] 
-            then
-                stepping="$2"
-        elif (( $# > 1 )); then
-                echo "$1"
-                echo ".! mm_decho() oops: second argument is invalid!" 1>&2
-                echo ".! must be /float but is: \"$2\", leaving function.." 1>&2
-                return false 2>/dev/null
-        fi
-
-        for i in $(seq 0 $((${#1}-1))); do
-                echo -n "${1:$i:1}"
-                sleep $stepping
-        done
-        echo
-}
-
 banner() {
 clear
 printf "\n\e[0m\e[1;92m    ____  _                                 _      \e[0m\n"
@@ -44,46 +15,54 @@ printf "\e[0m\e[1;96m         CREATED BY HTR-TECH \e[1;91m(\e[1;93m Tahmid Rayat
 }
 
 banner
-printf " \e[1;91m[\e[1;97m~\e[1;91m]\e[1;93m  "
-slowprint "Installing Packages ..."
+printf " \e[1;91m[\e[1;97m~\e[1;91m]\e[1;93m Installing Packages ...\e[0m\n"
 printf "\e[0m\n"
+sleep 1
 
-apt update -y 
+apt update -y
+termux-setup-storage
 apt install git zsh curl -y
 git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh --depth 1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh-syntax-highlighting --depth 1
 
+if [ -d .termux ]; then
+rm -rf .termux
+mkdir .termux
+fi
+
+curl -o .termux/colors.properties https://raw.githubusercontent.com/htr-tech/release-download/master/oh-my-zsh/colors.properties
+curl -o .termux/font.ttf https://github.com/htr-tech/release-download/raw/master/oh-my-zsh/font.ttf
+
+
 printf "\e[0m\n"
-printf " \e[1;91m[\e[1;97m~\e[1;91m]\e[1;93m  "
-slowprint "Binding Packets ..."
+printf " \e[1;91m[\e[1;97m~\e[1;91m]\e[1;93m Binding Packets ...\e[0m\n"
 printf "\e[0m\n"
 
 if [ -d "$HOME/.termux" ]; then
-mv "$HOME/.termux" "$HOME/.termux.backup.$(date +%Y.%m.%d-%H)"
+rm -rf $HOME/.termux
 fi
 
 if [ ! -d $HOME/.termux ]; then
-mkdir $HOME/.termux
+cp -f .termux $HOME/.termux
 fi
 
-curl -o $HOME/.termux/colors.properties https://raw.githubusercontent.com/htr-tech/release-download/master/oh-my-zsh/colors.properties
-curl -o $HOME/.termux/font.ttf https://github.com/htr-tech/release-download/raw/master/oh-my-zsh/font.ttf
 cp -f $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
+chsh -s zsh
+
+termux-setup-storage
+
 sed -i '/^ZSH_THEME/d' "$HOME/.zshrc"
 sed -i '1iZSH_THEME="agnoster"' "$HOME/.zshrc"
 echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
 
-chsh -s zsh
+termux-setup-storage
 termux-reload-settings
 
 printf "\e[0m\n"
-printf " \e[1;91m[\e[1;97m~\e[1;91m]\e[1;93m  "
-slowprint "Installation Completed !!"
+printf " \e[1;91m[\e[1;97m~\e[1;91m]\e[1;93m Installation Completed !!\e[0m\n"
 printf "\e[0m\n"
-
+sleep 2
 printf "\e[0m\n"
-printf " \e[1;91m[\e[1;97m~\e[1;91m]\e[1;96m  "
-slowprint " RESTARTING !!"
-printf "\e[0m\n"
-sleep 1
+printf " \e[1;91m[\e[1;97m~\e[1;91m]\e[1;96m RESTARTING !!\e[0m\n"
+sleep 2
 killall -9 com.termux
