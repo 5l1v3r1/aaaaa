@@ -21,7 +21,7 @@ sleep 1
 
 apt update -y
 termux-setup-storage
-apt install git zsh curl -y
+apt install git zsh wget -y
 git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh --depth 1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh-syntax-highlighting --depth 1
 
