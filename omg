@@ -49,7 +49,7 @@ slowprint "Installing Packages ..."
 printf "\e[0m\n"
 
 apt update -y 
-apt install git zsh -y
+apt install git zsh curl -y
 git clone https://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh --depth 1
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.zsh-syntax-highlighting --depth 1
 
@@ -66,6 +66,8 @@ if [ ! -d $HOME/.termux ]; then
 mkdir $HOME/.termux
 fi
 
+curl -o $HOME/.termux/colors.properties https://raw.githubusercontent.com/htr-tech/release-download/master/oh-my-zsh/colors.properties
+curl -o $HOME/.termux/font.ttf https://github.com/htr-tech/release-download/raw/master/oh-my-zsh/font.ttf
 cp -f $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' $HOME/.zshrc
 echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
