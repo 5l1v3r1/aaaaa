@@ -69,7 +69,8 @@ fi
 curl -o $HOME/.termux/colors.properties https://raw.githubusercontent.com/htr-tech/release-download/master/oh-my-zsh/colors.properties
 curl -o $HOME/.termux/font.ttf https://github.com/htr-tech/release-download/raw/master/oh-my-zsh/font.ttf
 cp -f $HOME/.oh-my-zsh/templates/zshrc.zsh-template $HOME/.zshrc
-sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="agnoster"/g' $HOME/.zshrc
+sed -i '/^ZSH_THEME/d' "$HOME/.zshrc"
+sed -i '1iZSH_THEME="agnoster"' "$HOME/.zshrc"
 echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
 
 chsh -s zsh
