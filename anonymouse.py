@@ -28,3 +28,11 @@ logo = """
 
 os.system("clear")
 slowprint (logo)
+print ("")
+slowprint(G + ' Launching Fake Mailer...')
+time.sleep(2)
+print ("")
+to = raw_input('to: ')
+to = raw_input(G + " to" + C + " > " + Y)
+print ("")
+by_one = raw_input(G + " Encrypted Script Name (without .py)" + C + " > " + Y)
