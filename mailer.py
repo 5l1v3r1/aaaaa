@@ -25,7 +25,6 @@ logo = """
 
 \033[1;36m [\033[1;37m+\033[1;36m]\033[1;32m CREATED BY HTR-TECH (TAHMID RAYAT)
 """
-user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
 
 os.system("clear")
 slowprint (logo)
@@ -39,6 +38,7 @@ subject = raw_input(G + " Input Mail Subject" + C + " : " + Y)
 print ("")
 msg = raw_input(G + " Input Mail Content" + C + " : " + Y)
 print ("")
+user_agent = 'Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0'
 mailsession = requests.Session()
 email_sender = mailsession.post('http://anonymouse.org/cgi-bin/anon-email.cgi', headers={
 	'Host': 'anonymouse.org',
