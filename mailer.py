@@ -13,7 +13,7 @@ def slowprint(s):
     for c in s + '\n':
         sys.stdout.write(c)
         sys.stdout.flush()
-        time.sleep(3.0 / 100)
+        time.sleep(8.0 / 100)
 
 logo = """
 \033[1;32m  ______    _         \033[1;33m  __  __       _ _           
@@ -27,9 +27,9 @@ logo = """
 """
 
 os.system("clear")
-slowprint (logo)
+print (logo)
 print ("")
-slowprint(G + ' Launching Fake Mailer...')
+slowprint(G + ' Launching Fake Mailer ...')
 time.sleep(2)
 print ("")
 to = raw_input(G + " Send Mail To" + C + " : " + Y)
