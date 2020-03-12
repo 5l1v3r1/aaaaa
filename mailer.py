@@ -59,9 +59,11 @@ email_sender = mailsession.post('http://anonymouse.org/cgi-bin/anon-email.cgi', 
 if 'The e-mail has been sent' in email_sender.text:
     slowprint(G + " Sending Email >>>>>>>>>>")
     print ("")
+    time.sleep(5)
     slowprint(C + " Mail Successfully Sent !!")
     print ("")
+    time.sleep(3)
     slowprint(W + " Process can take some time !!")
     print ("")
-    print (Y + " Visit github.com/htr-tech for More Tools" + W)
+    print (Y + " Visit www.github.com/htr-tech for More Tools" + W)
     print ("")
