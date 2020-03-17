@@ -18,12 +18,12 @@ printf "\e[0m\e[1;96m    [\e[0m\e[1;97m+\e[0m\e[1;96m]\e[0m\e[1;93m Created By H
 menu() {
 
 printf "\e[0m\n"
-printf "\e[0m\e[1;91m  [\e[1;97m01\e[1;91m]\e[1;93m Grab Location\e[0m\n"
-printf "\e[0m\e[1;91m  [\e[1;97m02\e[1;91m]\e[1;93m Grab Cam File\e[0m\n"
-printf "\e[0m\e[1;91m  [\e[1;97m03\e[1;91m]\e[1;93m Grab Audio File\e[0m\n"
-printf "\e[0m\e[1;91m  [\e[1;97m04\e[1;91m]\e[1;93m Grab Clipboard\e[0m\n"
-printf "\e[0m\e[1;91m  [\e[1;97m05\e[1;91m]\e[1;93m Grab Device Pin\e[0m\n"
-printf "\e[0m\e[1;91m  [\e[1;97mx \e[1;91m]\e[1;93m Exit\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97m01\e[1;91m]\e[1;93m Grab Location\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97m02\e[1;91m]\e[1;93m Grab Cam File\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97m03\e[1;91m]\e[1;93m Grab Audio File\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97m04\e[1;91m]\e[1;93m Grab Clipboard\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97m05\e[1;91m]\e[1;93m Grab Device Pin\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97mx \e[1;91m]\e[1;93m Exit\e[0m\n"
 printf "\e[0m\n"
 read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select an option: \e[0m\e[1;96m\en' option
 
