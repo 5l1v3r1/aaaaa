@@ -1,0 +1,54 @@
+#!/bin/bash
+
+banner() {
+
+clear
+printf "\e[0m\n"
+printf "\e[0m\e[1;92m   _____           _      \e[0m\e[1;93m  _____        __       \e[0m\n"
+printf "\e[0m\e[1;92m  / ____|         | |     \e[0m\e[1;93m |_   _|      / _|      \e[0m\n"
+printf "\e[0m\e[1;92m | |  __ _ __ __ _| |__   \e[0m\e[1;93m   | |  _ __ | |_ ___   \e[0m\n"
+printf "\e[0m\e[1;92m | | |_ |  __/ _  |  _ \  \e[0m\e[1;93m   | | |  _ \|  _/ _ \  \e[0m\n"
+printf "\e[0m\e[1;92m | |__| | | | (_| | |_) | \e[0m\e[1;93m  _| |_| | | | || (_) | \e[0m\n"
+printf "\e[0m\e[1;92m  \_____|_|  \__,_|_.__/  \e[0m\e[1;93m |_____|_| |_|_| \___/  \e[0m\n"
+printf "\e[0m\n"
+printf "\e[0m\e[1;96m    [\e[0m\e[1;97m+\e[0m\e[1;96m]\e[0m\e[1;93m Created By HTR-TECH \e[0m\e[1;91m(\e[0m\e[1;93m Tahmid Rayat \e[0m\e[1;91m)\e[0m\n"
+
+}
+
+menu() {
+
+printf "\e[0m\n"
+printf "\e[0m\e[1;91m  [\e[1;97m01\e[1;91m]\e[1;93m Grab Location\e[0m\n"
+printf "\e[0m\e[1;91m  [\e[1;97m02\e[1;91m]\e[1;93m Grab Cam File\e[0m\n"
+printf "\e[0m\e[1;91m  [\e[1;97m03\e[1;91m]\e[1;93m Grab Audio File\e[0m\n"
+printf "\e[0m\e[1;91m  [\e[1;97m04\e[1;91m]\e[1;93m Grab Clipboard\e[0m\n"
+printf "\e[0m\e[1;91m  [\e[1;97m05\e[1;91m]\e[1;93m Grab Device Pin\e[0m\n"
+printf "\e[0m\e[1;91m  [\e[1;97mx \e[1;91m]\e[1;93m Exit\e[0m\n"
+printf "\e[0m\n"
+read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select an option: \e[0m\e[1;96m\en' option
+
+if [[ $option == 1 || $option == 01 ]]; then
+glocation
+elif [[ $option == 2 || $option == 02 ]]; then
+gcamfile
+elif [[ $option == 3 || $option == 03 ]]; then
+gaudiofile
+elif [[ $option == 4 || $option == 04 ]]; then
+gclipboard
+elif [[ $option == 5 || $option == 05 ]]; then
+gdevicepin
+elif [[ $option == x || $option == X ]]; then
+printf "\n\e[0m\e[1;93m     Thanks for using this tool !!\e[0m\n\n"
+exit 1
+
+else
+printf " \n\n\e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\e[1;93m Invalid option \e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\n"
+sleep 1
+banner
+menu
+fi
+}
+
+
+banner
+menu
