@@ -4,10 +4,10 @@ trap 'printf "\n";stop;exit 1' 2
 
 deps() {
 
-command -v php > /dev/null 2>&1 || { printf "\n\e[0m\e[1;96m Packages is not Installed ! type \e[0m\e[1;93mbash start.sh\e[0m\n"; exit 1; }
-command -v curl > /dev/null 2>&1 || { printf "\n\e[0m\e[1;96m Packages is not Installed ! type \e[0m\e[1;93mbash start.sh\e[0m\n"; exit 1; }
-command -v ssh > /dev/null 2>&1 || { printf "\n\e[0m\e[1;96m Packages is not Installed ! type \e[0m\e[1;93mbash start.sh\e[0m\n"; exit 1; }
-command -v unzip > /dev/null 2>&1 || { printf "\n\e[0m\e[1;96m Packages is not Installed ! type \e[0m\e[1;93mbash start.sh\e[0m\n"; exit 1; }
+command -v php > /dev/null 2>&1 || { printf "\n\e[0m\e[1;96m Packages are not Installed ! type \e[0m\e[1;93mbash start.sh\e[0m\n"; exit 1; }
+command -v curl > /dev/null 2>&1 || { printf "\n\e[0m\e[1;96m Packages are not Installed ! type \e[0m\e[1;93mbash start.sh\e[0m\n"; exit 1; }
+command -v ssh > /dev/null 2>&1 || { printf "\n\e[0m\e[1;96m Packages are not Installed ! type \e[0m\e[1;93mbash start.sh\e[0m\n"; exit 1; }
+command -v unzip > /dev/null 2>&1 || { printf "\n\e[0m\e[1;96m Packages are not Installed ! type \e[0m\e[1;93mbash start.sh\e[0m\n"; exit 1; }
 
 }
 
