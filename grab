@@ -95,6 +95,40 @@ menu
 fi
 }
 
+glocation() {
+
+printf "\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97m01\e[1;91m]\e[1;93m Ngrok\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97m02\e[1;91m]\e[1;93m Serveo\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97m03\e[1;91m]\e[1;93m Localhostrun\e[0m\n"
+printf "\e[0m\n"
+glocation_d_o_server="1"
+read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select a Port Forwarding option: \e[0m\e[1;96m\en' gloc_option_server
+gloc_option_server="${gloc_option_server:-${glocation_d_o_server}}"
+
+
+if [[ $gloc_option_server == 1 || $gloc_option_server == 01 ]]; then
+startngrok
+elif [[ $gloc_option_server == 2 || $gloc_option_server == 02 ]]; then
+startserveo
+elif [[ $gloc_option_server == 3 || $gloc_option_server == 03 ]]; then
+startlocalhostrun
+
+else
+printf " \n\n\e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\e[1;93m Invalid option \e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\n"
+sleep 1
+banner
+menu
+fi
+}
+
+
+
+
+
+
+
+
 
 banner
 deps
