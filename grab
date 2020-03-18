@@ -263,7 +263,10 @@ elif [[ $checkerror == 4 ]]; then
 rm -rf .server/location/error.txt
 getcredentials
 else
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m User Denied Access !!\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m User Denied Access !!\e[0m\n\n"
+killall -2 php > /dev/null 2>&1
+killall -2 ngrok > /dev/null 2>&1
+killall ssh > /dev/null 2>&1
 exit 1
 fi
 fi
@@ -314,9 +317,6 @@ fi
 exit 1
 
 }
-
-
-
 
 banner
 deps
