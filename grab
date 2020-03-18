@@ -162,7 +162,7 @@ printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select a Port (Defau
 read glocport
 glocport="${glocport:-${glocdef_port}}"
 printf "\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;92m(\e[0m\e[1;96mlocalhost:$port\e[0m\e[1;92m)\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;92m(\e[0m\e[1;96mhttp://127.0.0.1:$glocport\e[0m\e[1;92m)\e[0m\n"
 cd .server/location && php -S 127.0.0.1:$port > /dev/null 2>&1 & 
 sleep 2
 printf "\e[0m\n"
