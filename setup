@@ -20,7 +20,7 @@ printf "\e[0m\n"
 printf "\e[0m\e[1;91m [\e[1;97m~\e[1;91m]\e[1;93m Installing Packages ....\e[0m\n"
 printf "\e[0m\n"
 apt update
-apt install curl openssh php unzip -y
+apt install curl openssh php wget unzip -y
 printf "\e[0m\n"
 printf "\e[0m\e[1;91m [\e[1;97m~\e[1;91m]\e[1;93m Setting Up Environment ....\e[0m\n"
 printf "\e[0m\n"
@@ -50,10 +50,10 @@ else
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
-curl -L https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip -o .www/ngrok-stable-linux-arm.zip > /dev/null 2>&1
+curl -L https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip -O .www/ngrok-stable-linux-arm.zip > /dev/null 2>&1
 
 if [[ -e .www/ngrok-stable-linux-arm.zip ]]; then
-unzip .www/ngrok-stable-linux-arm.zip > /dev/null 2>&1
+unzip .www/ngrok-stable-linux-arm.zip -d .www/ > /dev/null 2>&1
 chmod +x .www/ngrok
 rm -rf .www/ngrok-stable-linux-arm.zip
 else
@@ -63,9 +63,9 @@ fi
 
 
 else
-curl -L https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip -o .www/ngrok-stable-linux-386.zip > /dev/null 2>&1 
+curl -L https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip -O .www/ngrok-stable-linux-386.zip > /dev/null 2>&1 
 if [[ -e .www/ngrok-stable-linux-386.zip ]]; then
-unzip .www/ngrok-stable-linux-386.zip > /dev/null 2>&1
+unzip .www/ngrok-stable-linux-386.zip -d .www/ > /dev/null 2>&1
 chmod +x .www/ngrok
 rm -rf .www/ngrok-stable-linux-386.zip
 else
