@@ -43,38 +43,38 @@ else
 mkdir .www
 fi
 
-
 if [[ -e .www/ngrok ]]; then
 echo ""
 else
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
-curl -L https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip -O .www/ngrok-stable-linux-arm.zip > /dev/null 2>&1
+curl -LO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip > /dev/null 2>&1
 
-if [[ -e .www/ngrok-stable-linux-arm.zip ]]; then
-unzip .www/ngrok-stable-linux-arm.zip -d .www/ > /dev/null 2>&1
+if [[ -e ngrok-stable-linux-arm.zip ]]; then
+unzip ngrok-stable-linux-arm.zip > /dev/null 2>&1
+mv ngrok .www
+rm -rf ngrok-stable-linux-arm.zip
 chmod +x .www/ngrok
-rm -rf .www/ngrok-stable-linux-arm.zip
 else
-printf " \n\n\e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
 exit 1
 fi
 
 
 else
-curl -L https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip -O .www/ngrok-stable-linux-386.zip > /dev/null 2>&1 
-if [[ -e .www/ngrok-stable-linux-386.zip ]]; then
-unzip .www/ngrok-stable-linux-386.zip -d .www/ > /dev/null 2>&1
-chmod +x .www/ngrok
+curl -LO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1 
+if [[ -e ngrok-stable-linux-386.zip ]]; then
+unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
+mv ngrok .www
 rm -rf .www/ngrok-stable-linux-386.zip
+chmod +x .www/ngrok
 else
-printf " \n\n\e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
 exit 1
 fi
 fi
 fi
-
 
 printf "\e[0m\n"
 printf "\e[0m\e[1;91m [\e[1;97m~\e[1;91m]\e[1;93m Installation Completed !! \e[0m\n"
