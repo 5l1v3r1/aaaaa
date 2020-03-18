@@ -163,14 +163,14 @@ read glocport
 glocport="${glocport:-${glocdef_port}}"
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;92m(\e[0m\e[1;96mhttp://127.0.0.1:$glocport\e[0m\e[1;92m)\e[0m\n"
-cd .server/location && php -S 127.0.0.1:$port > /dev/null 2>&1 & 
+cd .server/location && php -S 127.0.0.1:$glocport > /dev/null 2>&1 & 
 sleep 2
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Serveo ..\e[0m\n"
 if [[ -e .grablink ]]; then
 rm -rf .grablink
 fi
-$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:'$port' serveo.net 2> /dev/null > .grablink ' &
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:'$glocport' serveo.net 2> /dev/null > .grablink ' &
 printf "\n"
 sleep 5
 gloc_send_url=$(grep -o "https://[0-9a-z]*\.serveo.net" .grablink)
