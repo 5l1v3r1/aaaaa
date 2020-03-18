@@ -27,13 +27,13 @@ printf "\e[0m\n"
 
 
 if [[ -d .server ]]; then
-echo
+printf ""
 else
 mkdir .server
 fi
 
 if [[ -e .server/ngrok ]]; then
-echo ""
+printf ""
 else
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
@@ -46,7 +46,7 @@ mv ngrok .server
 rm -rf ngrok-stable-linux-arm.zip
 chmod +x .server/ngrok
 else
-printf " \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
+printf " \n\e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
 exit 1
 fi
 
@@ -59,7 +59,7 @@ mv ngrok .server
 rm -rf ngrok-stable-linux-386.zip
 chmod +x .server/ngrok
 else
-printf " \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
+printf " \n\e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Install Ngrok Manually.\e[0m\n"
 exit 1
 fi
 fi
