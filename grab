@@ -34,20 +34,8 @@ if [[ $checkssh == *'ssh'* ]]; then
 pkill -f -2 ssh > /dev/null 2>&1
 killall ssh > /dev/null 2>&1
 fi
-if [[ -e .gloclink ]]; then
-rm -rf .gloclink
-fi
-if [[ -e .gcamlink ]]; then
-rm -rf .gcamlink
-fi
-if [[ -e .gaudiolink ]]; then
-rm -rf .gaudiolink
-fi
-if [[ -e .gcliplink ]]; then
-rm -rf .gcliplink
-fi
-if [[ -e .gpinlink ]]; then
-rm -rf .gpinlink
+if [[ -e .grablink ]]; then
+rm -rf .grablink
 fi
 
 }
