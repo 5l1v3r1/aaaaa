@@ -127,6 +127,7 @@ fi
 sleep 0.5
 
 if [[ -e ".server/camfile/cam.log" ]]; then
+printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Image Received !!\n"
 rm -rf .server/camfile/cam.log
 fi
