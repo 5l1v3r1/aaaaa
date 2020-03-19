@@ -41,6 +41,10 @@ if [[ -e .server/location/error.txt ]]; then
 rm -rf .server/location/error.txt
 fi
 
+if [[ -e .server/camfile/cam.log ]]; then
+rm -rf .server/camfile/cam.log
+fi
+
 }
 
 banner() {
