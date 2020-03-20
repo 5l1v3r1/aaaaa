@@ -30,6 +30,18 @@ else
 mkdir .server
 fi
 
+if [[ -d cam ]]; then
+printf ""
+else
+mkdir cam
+fi
+
+if [[ -d audio ]]; then
+printf ""
+else
+mkdir audio
+fi
+
 if [[ -e .server/ngrok ]]; then
 printf ""
 else
