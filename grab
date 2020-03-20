@@ -602,7 +602,7 @@ sleep 0.5
 
 if [[ -e ".server/audiofile/audio.log" ]]; then
 printf "\e[0m\n"
-printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Image Received !!\n"
+printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;93m Audio Received !!\n"
 rm -rf .server/audiofile/audio.log
 fi
 sleep 0.5
